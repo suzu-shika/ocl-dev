@@ -1,0 +1,62 @@
+---
+const { headingTitle, headingTitleEn, headingClass } = Astro.props;
+---
+
+<div class="c-heading-lv1">
+  <div class={headingClass}>
+    <div class="c-heading-lv1-wrapper">
+      <h1 class="c-heading-lv1-title">{headingTitle}</h1>
+      <span class="c-heading-lv1-en" aria-hidden="true">{headingTitleEn}</span>
+    </div><!-- /.c-heading-lv1-wrapper -->
+  </div><!-- /.l-container-s -->
+</div><!-- /.c-heading-lv1 -->
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-heading-lv1 {
+    display: grid;
+    gap: 20px;
+    padding-block-start: 20px;
+    margin-block-start: 60px;
+
+    &::after {
+      content: "";
+      height: .1rem;
+      background-image: linear-gradient(270deg, rgba(255, 252, 246, 1), rgba(0, 51, 0, 1) 86%);
+    }
+  }
+
+  .c-heading-lv1-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .c-heading-lv1-title {
+    font-family: var(--font-family-serif);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .c-heading-lv1-en {
+    color: var(--color-green);
+    font-family: var(--font-family-en);
+    font-size: 40px;
+  }
+
+  @include mq() {
+    .c-heading-lv1 {
+      gap: 24px;
+      padding-block-start: 40px;
+      margin-block-start: 80px;
+    }
+
+    .c-heading-lv1-title {
+      font-size: 18px;
+    }
+
+    .c-heading-lv1-en {
+      font-size: 50px;
+    }
+  }
+</style>

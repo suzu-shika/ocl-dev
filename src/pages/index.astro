@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TopKv from "../components/page-top/TopKv.astro";
+import TopAbout from "../components/page-top/TopAbout.astro";
+import TopActivities from "../components/page-top/TopActivities.astro";
+import TopPartnership from "../components/page-top/TopPartnership.astro";
+import TopNews from "../components/page-top/TopNews.astro";
+import TopVoices from "../components/page-top/TopVoices.astro";
+import TopFaq from "../components/page-top/TopFaq.astro";
+import TopCorporatePartners from "../components/page-top/TopCorporatePartners.astro";
+
+import CtaArea from "../components/common/CtaArea.astro";
+---
+
+<Layout
+  title="自然豊かな環境でのびのびと成長する習志野市の幼稚園｜みもみ幼稚園"
+  ogType="website"
+  description="京成実籾駅徒歩3分のみもみ幼稚園は、自然に囲まれた広い敷地でのびのび遊び、学べる環境です。自由と自立を育む教育を行っています。習志野市・船橋市・八千代市・千葉市からもアクセス良好です。見学も随時受付中です。"
+>
+  <!-- top-kv -->
+  <TopKv />
+
+  <main class="top-main">
+    <!-- top-about -->
+    <TopAbout />
+
+    <!-- top-activities -->
+    <TopActivities />
+
+    <!-- top-partnership -->
+    <TopPartnership />
+
+    <!-- top-news -->
+    <TopNews />
+
+    <!-- top-voices -->
+    <TopVoices />
+
+    <!-- top-faq -->
+    <TopFaq />
+
+    <!-- top-corporate-partners -->
+    <TopCorporatePartners />
+  </main>
+
+  <!-- cta-area -->
+  <CtaArea />
+</Layout>

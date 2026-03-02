@@ -1,0 +1,95 @@
+---
+import Button from "../common/Button.astro";
+---
+
+<section class="top-about">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="top-about-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">学生に、<br class="u-no-pc">社会と協働するチャンスを</h2>
+          <span class="c-title-en" aria-hidden="true">About Us</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.top-about-title -->
+
+      <div class="l-section-body">
+        <div class="top-about-description">
+          <p class="top-about-text">
+            <span>社会に出なければ実現できない挑戦があります。</span>
+            <span>Oita Campus Linkは、学生が社会と関わり、価値を提供する経験を通して、自分の可能性を広げていく機会を届けたいと考えています。</span>
+            <span>若者が社会と接点を持たないまま進路を選ぶことは、学生にとっても、社会にとっても、大きな機会損失です。</span>
+          </p>
+          <p class="top-about-text">学生と社会が出会う仕組みを、私たちOita Campus Linkが創ります。</p>
+        </div><!-- /.top-about-description -->
+
+        <div class="top-about-btn">
+          <Button
+            buttonClass="c-btn c-btn--arrow"
+            buttonUrl="/about"
+            buttonText="Oita Campus Linkについて"
+            buttonAriaLabel="Oita Campus Linkについてを見る"
+          />
+        </div><!-- /.top-about-btn -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-about {
+    background-image: url(../../../public/assets/images/top/bg-top-about@2x.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .top-about-title {
+
+  }
+
+  .top-about-description,
+  .top-about-text {
+    display: grid;
+    gap: 16px;
+    text-align: justify;
+  }
+
+  .top-about-btn {
+    width: fit-content;
+    margin-block-start: 56px;
+    margin-inline: auto;
+  }
+
+  @include mq() {
+    .top-about {
+      // background-image: url(../../../public/assets/images/top/bg-top-about@2x.png);
+      // background-repeat: no-repeat;
+      // background-size: cover;
+      // background-position: center center;
+    }
+
+    .top-about-title {
+
+    }
+
+    .top-about-description {
+      max-width: 800px;
+    }
+    .top-about-description,
+    .top-about-text {
+      // display: grid;
+      // gap: 16px;
+      // text-align: justify;
+    }
+
+    .top-about-btn {
+      // width: fit-content;
+      margin-block-start: 80px;
+      // margin-inline: auto;
+    }
+  }
+
+</style>

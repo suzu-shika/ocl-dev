@@ -1,0 +1,127 @@
+---
+import Button from "../common/Button.astro";
+---
+
+<section class="activities-sponsors">
+  <div class="l-container-s">
+    <div class="l-section">
+      <div class="activities-sponsors-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">協賛企業紹介</h2>
+          <span class="c-title-en" aria-hidden="true">Sponsors</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.activities-sponsors-title -->
+
+      <div class="l-section-body">
+        <div class="activities-sponsors-description">
+          <p class="activities-sponsors-text">Oita Campus Linkの活動は、趣旨に共感し、応援してくださる企業の皆さまのご支援によって成り立っています。</p>
+          <p class="activities-sponsors-text">活動を支えていただいている協賛企業をご紹介します。</p>
+        </div><!-- /.activities-sponsors-description -->
+        <ul class="activities-sponsors-list">
+          <li class="activities-sponsors-item">株式会社Example商事</li>
+          <li class="activities-sponsors-item">Exampleしんきん</li>
+          <li class="activities-sponsors-item">Example株式会社</li>
+          <li class="activities-sponsors-item">株式会社Example酒造</li>
+          <li class="activities-sponsors-item">Example商店</li>
+          <li class="activities-sponsors-item">Exampleハウジング</li>
+          <li class="activities-sponsors-item">合同会社Example産業</li>
+        </ul>
+        <div class="activities-sponsors-notes">
+          <small>※順不同・敬称略</small>
+        </div><!-- /.activities-sponsors-notes -->
+
+        <div class="activities-sponsors-btn">
+          <Button
+            buttonClass="c-btn c-btn--arrow"
+            buttonUrl="/contact"
+            buttonText="協賛・賛助会員について問い合わせる"
+          />
+        </div><!-- /.activities-sponsors-btn -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container-s -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .activities-sponsors {
+
+  }
+
+  .activities-sponsors-title {
+    text-align: center;
+  }
+
+  .activities-sponsors-description {
+
+  }
+
+  .activities-sponsors-text {
+    text-align: justify;
+
+    & + & {
+      margin-block-start: 16px;
+    }
+  }
+
+  .activities-sponsors-list {
+    display: grid;
+    gap: 8px;
+    margin-block-start: 32px;
+  }
+
+  .activities-sponsors-item {
+    padding-inline-start: 1.25em;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: currentColor;
+      position: absolute;
+      top: .627em;
+      left: .25em;
+    }
+  }
+
+  .activities-sponsors-notes {
+    margin-block-start: 16px;
+    text-align: right;
+
+    small {
+      font-size: 15px;
+    }
+  }
+
+  .activities-sponsors-btn {
+    width: fit-content;
+    margin-block-start: 56px;
+    margin-inline: auto;
+  }
+
+  @include mq() {
+    .activities-sponsors {
+
+    }
+
+    .activities-sponsors-list {
+      grid-template-columns: repeat(2, 1fr);
+      margin-block-start: 40px;
+    }
+
+    .activities-sponsors-notes {
+      margin-block-start: 20px;
+
+      small {
+        font-size: 16px;
+      }
+    }
+
+    .activities-sponsors-btn {
+      margin-block-start: 80px;
+    }
+  }
+</style>

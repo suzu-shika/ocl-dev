@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeadingLv1 from "../components/common/HeadingLv1.astro";
+import ActivitiesBackground from "../components/page-activities/ActivitiesBackground.astro";
+import ActivitiesOverview from "../components/page-activities/ActivitiesOverview.astro";
+import ActivitiesActivityReports from "../components/page-activities/ActivitiesActivityReports.astro";
+import ActivitiesVoices from "../components/page-activities/ActivitiesVoices.astro";
+
+import ActivitiesSponsors from "../components/page-activities/ActivitiesSponsors.astro";
+import ActivitiesCorporatePartners from "../components/page-activities/ActivitiesCorporatePartners.astro";
+
+import BreadCrumb from "../components/common/Breadcrumb.astro";
+import CtaArea from "../components/common/CtaArea.astro";
+---
+
+<Layout
+  title="よくある質問 about｜習志野市の幼稚園｜みもみ幼稚園"
+  ogType="website"
+  description="習志野市のみもみ幼稚園に関する、よくある質問をカテゴリー別にご紹介しています。預かり保育や給食から、子どもの成長に関することまで、安心してご利用いただけるよう丁寧にお答えしています。"
+>
+  <div class="activities">
+    <div class="activities-heading-lv1">
+      <HeadingLv1
+        headingTitle="活動紹介"
+        headingTitleEn="Activities"
+        headingClass="l-container-s"
+      />
+    </div><!-- /.activities-heading-lv1 -->
+
+    <main class="activities-main">
+      <div class="activities-content">
+        <!-- activities-background -->
+        <ActivitiesBackground />
+
+        <!-- activities-overview -->
+        <ActivitiesOverview />
+
+        <!-- activities-activity-reports -->
+        <ActivitiesActivityReports />
+
+        <!-- activities-voices -->
+        <ActivitiesVoices />
+
+        <!-- activities-sponsors -->
+        <ActivitiesSponsors />
+
+        <!-- activities-corporate-partners -->
+        <ActivitiesCorporatePartners />
+      </div><!-- /.activities-content -->
+
+      <!-- breadcrumb -->
+      <BreadCrumb />
+    </main>
+
+    <!-- cta-area -->
+    <CtaArea />
+  </div><!-- /.activities -->
+</Layout>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+
+  .activities {
+
+  }
+
+  .activities-heading-lv1 {
+
+  }
+
+  .activities-main {
+
+  }
+
+  .activities-content {
+    margin-block-start: 40px;
+
+    @include mq() {
+      margin-block-start: 100px;
+    }
+  }
+
+</style>

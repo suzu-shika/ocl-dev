@@ -1,0 +1,22 @@
+@use 'breakpoints' as *;
+
+.c-about-list {
+  display: grid;
+  gap: 16px;
+  margin-block-start: 24px;
+}
+
+.c-about-list-item {
+  padding-block-end: 12px;
+  border-bottom: 1px solid var(--color-sub-green2);
+}
+
+.c-about-list-term {
+  color: var(--color-sub-green2);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.c-about-list-description {
+  margin-block-start: 8px;
+}

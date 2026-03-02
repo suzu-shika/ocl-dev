@@ -1,0 +1,79 @@
+---
+
+---
+
+<section class="contact-lead">
+  <div class="l-container">
+    <div class="contact-lead-title">
+      <h2 class="c-heading-md c-heading-md--green">お問い合わせ・ご相談</h2>
+    </div><!-- /.contact-lead-title -->
+
+    <div class="l-section-body">
+      <div class="contact-lead-description">
+        <p class="contact-lead-text">Oita Campus Linkでは、学生と社会をつなぐ取り組みに関するご相談を受け付けています。</p>
+        <ul class="contact-lead-list">
+          <li class="contact-lead-item">学生との共同プロジェクトに関心がある企業の方</li>
+          <li class="contact-lead-item">学生と社会・地域をつなぐ取り組みを検討されている行政・団体の方</li>
+        </ul>
+        <p class="contact-lead-text">具体的な内容が決まっていなくても構いません。<br>「まずは話を聞いてみたい」「活動について詳しく知りたい」といったご相談も歓迎しています。</p>
+        <p class="contact-lead-text">下記フォームより、お気軽にお問い合わせください。</p>
+      </div><!-- /.contact-lead-description -->
+    </div><!-- /.l-section-body -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .contact-lead {
+    padding-block-end: 140px;
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 1px;
+      height: 60px;
+      margin-inline: auto;
+      background-color: var(--color-sub-green2);
+      position: absolute;
+      right: 0;
+      bottom: 40px;
+      left: 0;
+    }
+  }
+
+  .contact-lead-title {
+
+  }
+
+  .contact-lead-description {
+    display: grid;
+    gap: 16px;
+    text-align: justify;
+  }
+
+  .contact-lead-text {
+
+  }
+
+  .contact-lead-list {
+
+  }
+
+  .contact-lead-item {
+    padding-inline-start: 1.1em;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: currentColor;
+      position: absolute;
+      top: .7em;
+      left: .4em;
+    }
+  }
+
+</style>

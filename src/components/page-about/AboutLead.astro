@@ -1,0 +1,30 @@
+---
+
+---
+
+<div class="about-lead">
+  <div class="l-container-s">
+    <p class="about-lead-text">Oita Campus Linkは、学生が企業や行政と協働し、社会に価値を提供する経験ができる機会をつくる、学生のみで運営するNPO法人です。</p>
+    <p class="about-lead-text">大分にルーツを持つ学生を中心に発足しましたが、現在は地域を限定せず、学生と社会をつなぐ活動を行っています。</p>
+  </div><!-- /.l-container-s -->
+</div>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .about-lead {
+
+  }
+
+  .about-lead-text {
+    text-align: justify;
+
+    & + & {
+      margin-block-start: 8px;
+
+      @include mq() {
+        margin-block-start: 16px;
+      }
+    }
+  }
+</style>

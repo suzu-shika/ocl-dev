@@ -1,0 +1,50 @@
+@use 'breakpoints' as *;
+
+.c-faq-list {
+  display: grid;
+  gap: 32px;
+  text-align: justify;
+
+  @include mq() {
+    gap: 40px;
+  }
+}
+
+.c-faq-item {
+  display: grid;
+  gap: 24px;
+}
+
+.c-faq-q,
+.c-faq-a {
+  padding-inline: 40px 10px;
+  position: relative;
+}
+
+.c-faq-q::before,
+.c-faq-a::before {
+  color: var(--color-green);
+  font-family: var(--font-family-en);
+  font-size: 18px;
+  position: absolute;
+  left: 10px;
+}
+
+.c-faq-q {
+  padding-block: 8px;
+  background-color: var(--color-sub-green1);
+  font-family: var(--font-family-serif);
+  font-weight: 700;
+
+  &::before {
+    content: "Q.";
+    top: .345em;
+  }
+}
+
+.c-faq-a {
+  &::before {
+    content: "A.";
+    top: -.05em;
+  }
+}

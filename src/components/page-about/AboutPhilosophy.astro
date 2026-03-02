@@ -1,0 +1,117 @@
+---
+
+---
+
+<section class="about-philosophy">
+  <div class="l-container-s">
+    <div class="l-section">
+      <div class="about-philosophy-title">
+        <div class="c-title">
+          <h2 class="c-title-ja c-title-ja--white">理念</h2>
+          <span class="c-title-en c-title-en--white" aria-hidden="true">Philosophy</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.about-philosophy-title -->
+
+      <div class="l-section-body">
+        <div class="about-philosophy-content">
+          <h3 class="c-heading-md">自分自身と向き合い、自分で道を選ぶ力を育む</h3>
+          <div class="about-philosophy-description">
+            <p class="about-philosophy-text">Oita Campus Linkは、学生自身が「自分自身を考える」きっかけづくりの場です。</p>
+            <p class="about-philosophy-text">多様性という言葉で様々な生き方や価値観が認められる現代だからこそ、自分自身と素直に向き合うことは難しいと思います。自分が理想とする自分とはなんなのか。</p>
+            <p class="about-philosophy-text">それを考えるにには、次のようなことが必要だと考えます。</p>
+            <ol class="about-philosophy-list">
+              <li class="about-philosophy-item">多くの人と出会い、その人の生き方を知ること</li>
+              <li class="about-philosophy-item">自分で様々なものを見ること</li>
+              <li class="about-philosophy-item">自分で動いてみること</li>
+            </ol>
+            <p class="about-philosophy-text">そして、これらを大学生のうちに経験することが、ライフデザインについて考えるきっかけにもなります。</p>
+            <p class="about-philosophy-text">なぜ自分自身と向き合う必要があるのか。<br>それは自分自身の選択に後悔を残さないためです。大学生という学生生活の後は、親や周りの大人に責任はありません。自分が選択した道は自分に責任があります。もしその道を適当に選んで失敗したのなら、きっと後悔し周りの責任にしたくなるでしょう。しかし周りに流されたからという理由で選び直すことはできません。</p>
+            <p class="about-philosophy-text">その後悔をしないためには学生のうちに人よりも様々な経験をしておくことです。それが自分で道を選ぶために必要なことであり、一朝一夕に手に入る物でもありません。</p>
+            <p class="about-philosophy-text">所属する学生に自信を持って自分らしい選択をさせることがOita Campus Linkの使命です。</p>
+          </div><!-- /.about-philosophy-description -->
+        </div><!-- /.about-philosophy-content -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container-s -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .about-philosophy {
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(0, 51, 0, 1) 78%);
+    color: var(--color-white);
+  }
+
+  .about-philosophy-title {
+    text-align: center;
+  }
+
+  .about-philosophy-content {
+    .c-heading-md {
+      text-align: justify;
+    }
+  }
+
+  .about-philosophy-description {
+    padding-block-end: 1000px;
+    margin-block-start: 32px;
+    text-align: justify;
+  }
+
+  .about-philosophy-text {
+
+    & + & {
+      margin-block-start: 16px;
+    }
+  }
+
+  .about-philosophy-list {
+
+  }
+
+  .about-philosophy-item {
+    padding-inline-start: 2.25em;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 1em;
+    }
+
+    &:nth-child(1)::before {
+      content: "①";
+    }
+
+    &:nth-child(2)::before {
+      content: "②";
+    }
+
+    &:nth-child(3)::before {
+      content: "③";
+    }
+  }
+
+  @include mq() {
+    .about-philosophy {
+    }
+
+    .about-philosophy-description {
+      // padding-block-end: 1000px;
+      margin-block-start: 40px;
+    }
+
+    .about-philosophy-text {
+
+      & + & {
+        // margin-block-start: 16px;
+      }
+    }
+
+    .about-philosophy-list {
+
+    }
+  }
+
+</style>

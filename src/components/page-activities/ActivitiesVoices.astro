@@ -1,0 +1,52 @@
+---
+import Voices from "../common/Voices.astro";
+---
+
+<section class="activities-voices">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="activities-voices-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">ご利用者の声</h2>
+          <span class="c-title-en" aria-hidden="true">Voices</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.activities-voices-title -->
+
+      <div class="l-section-body">
+        <p class="activities-voices-lead">学生・企業・行政、それぞれの立場から寄せられた声をご紹介します。</p>
+        <div class="activities-voices-splide">
+          <Voices />
+        </div><!-- /.activities-voices-splide -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .activities-voices {
+    background-color: var(--color-sub-green1);
+
+    .l-section {
+      padding-block-end: calc(80px + 16px + 32px);
+    }
+  }
+
+  .activities-voices-title {
+    text-align: center;
+  }
+
+  .activities-voices-lead {
+    text-align: center;
+  }
+
+  .activities-voices-splide {
+    margin-block-start: calc(32px + 9px);
+
+    @include mq() {
+      margin-block-start: calc(48px + 9px);
+    }
+  }
+
+</style>

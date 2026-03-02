@@ -1,0 +1,114 @@
+---
+import Button from "../common/Button.astro";
+---
+
+<section class="top-news">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="top-news-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">お知らせ</h2>
+          <span class="c-title-en" aria-hidden="true">News</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.top-news-title -->
+
+      <div class="l-section-body">
+        <div class="top-news-list">
+          <a href="#" class="c-news-card">
+            <div class="c-news-card-thumbnail">
+              <img src="../../../public/assets/images/global/pic-news-thumbnail01@2x.jpg" alt="" loading="lazy" decoding="async" width="318" height="208">
+            </div><!-- /.c-news-card-thumbnail -->
+            <div class="c-news-card-meta">
+              <span class="c-news-card-category">対外活動</span>
+              <time datetime="2023-03-01" class="c-news-card-date">2023.03.01</time>
+            </div><!-- /.c-news-card-meta -->
+            <h3 class="c-news-card-title c-heading-sm">記事タイトル記事タイトル</h3>
+          </a>
+          <a href="#" class="c-news-card">
+            <div class="c-news-card-thumbnail">
+              <img src="../../../public/assets/images/global/pic-news-noimage@2x.png" alt="" loading="lazy" decoding="async" width="318" height="208">
+            </div><!-- /.c-news-card-thumbnail -->
+            <div class="c-news-card-meta">
+              <span class="c-news-card-category">お知らせ</span>
+              <time datetime="2023-03-01" class="c-news-card-date">2023.03.01</time>
+            </div><!-- /.c-news-card-meta -->
+            <h3 class="c-news-card-title c-heading-sm">記事タイトル記事タイトル記事タイトル</h3>
+          </a>
+          <a href="#" class="c-news-card">
+            <div class="c-news-card-thumbnail">
+              <img src="../../../public/assets/images/global/pic-news-thumbnail01@2x.jpg" alt="" loading="lazy" decoding="async" width="318" height="208">
+            </div><!-- /.c-news-card-thumbnail -->
+            <div class="c-news-card-meta">
+              <span class="c-news-card-category">活動報告</span>
+              <time datetime="2023-03-01" class="c-news-card-date">2023.03.01</time>
+            </div><!-- /.c-news-card-meta -->
+            <h3 class="c-news-card-title c-heading-sm">記事タイトル記事タイトル記事タイトル</h3>
+          </a>
+        </div>
+
+        <div class="top-news-btn">
+          <Button
+            buttonClass="c-btn c-btn--arrow"
+            buttonUrl="/news"
+            buttonText="お知らせ一覧"
+            buttonAriaLabel="お知らせ一覧を見る"
+          />
+        </div><!-- /.top-news-btn -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-news {
+
+  }
+
+  .top-news-title {
+
+  }
+
+  .top-news-list {
+    display: grid;
+    gap: 36px;
+  }
+
+  .top-news-item {
+
+  }
+
+  .top-news-btn {
+    margin-block-start: 56px;
+    text-align: center;
+  }
+
+  @include mq() {
+    .top-news {
+
+    }
+
+    .top-news-title {
+
+    }
+
+    .top-news-list {
+      // display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      // gap: calc(40px / var(--width-pc) * 100vw);
+      gap: 24px;
+    }
+
+    .top-news-item {
+      // display: flex;
+      // flex-direction: column;
+    }
+
+    .top-news-btn {
+      margin-block-start: 80px;
+      // text-align: center;
+    }
+  }
+</style>

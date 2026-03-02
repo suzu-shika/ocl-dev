@@ -1,0 +1,76 @@
+---
+import Voices from "../common/Voices.astro";
+import Button from "../common/Button.astro";
+---
+
+<section class="top-voices">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="top-voices-title">
+        <div class="c-title">
+          <h2 class="c-title-ja" id="voices-carousel-heading">ご利用者の声</h2>
+          <span class="c-title-en" aria-hidden="true">Voices</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.top-voices-title -->
+
+      <div class="l-section-body">
+        <div class="top-voices-splide">
+          <Voices />
+        </div><!-- /.top-voices-splide -->
+
+        <div class="top-voices-btn">
+          <Button
+            buttonClass="c-btn c-btn--arrow"
+            buttonUrl="/activities"
+            buttonText="活動紹介を見る"
+          />
+        </div><!-- /.top-voices-btn -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-voices {
+    background-color: var(--color-sub-green1);
+  }
+
+  .l-container {
+
+  }
+
+  .l-section {
+
+  }
+
+  .top-voices-title {
+
+  }
+
+  .c-title {
+
+  }
+
+  .c-title-ja {
+
+  }
+
+  .c-title-en {
+
+  }
+
+  .l-section-body {
+
+  }
+
+  .top-voices-splide {
+    padding-block-start: 9px;
+  }
+
+  .top-voices-btn {
+    margin-block-start: calc(56px + 16px + 32px);
+    text-align: center;
+  }
+</style>

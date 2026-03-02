@@ -1,0 +1,69 @@
+@use 'breakpoints' as *;
+
+/* -----------------------------------
+  utility
+----------------------------------- */
+/* screen reader only */
+.u-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* uppercase */
+.u-uppercase {
+  text-transform: uppercase;
+}
+
+/* lowercase */
+.u-lowercase {
+  text-transform: lowercase;
+}
+
+/* disabled link */
+.u-disabled-link {
+  pointer-events: none;
+  text-decoration: none;
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* break */
+.u-break {
+  display: inline-block;
+}
+
+/* no-sp */
+.u-no-sp {
+  display: none;
+}
+
+@include mq() {
+  .u-no-sp {
+    display: block;
+  }
+}
+
+/* no-pc */
+@include mq() {
+  .u-no-pc {
+    display: none;
+  }
+}
+
+// 暫定公開用のユーティリティクラス
+/* 無効なリンク */
+.u-disabled {
+  color: #ccc;
+  pointer-events: none;
+}
+
+/* 一時的な非表示 */
+.u-display-none {
+  display: none;
+}

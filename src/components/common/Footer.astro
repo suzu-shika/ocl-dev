@@ -1,0 +1,267 @@
+---
+import Button from "./Button.astro";
+const { logo, logoAlt } = Astro.props;
+---
+
+<!-- footer -->
+<footer class="footer">
+  <div class="l-container">
+    <div class="footer-logo">
+      <img
+        src={logo}
+        alt={logoAlt}
+        loading="lazy"
+        decoding="async"
+        width="200"
+        height="41"
+      />
+    </div><!-- /.footer-logo -->
+
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <ul class="footer-nav-list">
+        <li class="footer-nav-item">
+          <a href="/">トップ</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="/about">Oita Campus Linkについて</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="/activities">活動紹介</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="/news">お知らせ</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="/faq">よくあるご質問</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="footer-cta">
+      <Button
+        buttonClass="c-btn c-btn--arrow c-btn--white c-btn--mail-icon"
+        buttonUrl="/contact"
+        buttonText="お問い合わせ・ご相談"
+        buttonAriaLabel="お問い合わせ・ご相談をする"
+      />
+    </div><!-- /.footer-cta -->
+
+    <div class="footer-links">
+      <ul class="footer-sns-list">
+        <li class="footer-sns-item">
+          <a href="https://www.instagram.com/oitagakusei_tokyo/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/global/icon-instagram.svg" alt="Instagram" loading="lazy" decoding="async" width="26" height="26">
+          </a>
+        </li>
+        <li class="footer-sns-item">
+          <a href="https://www.instagram.com/oitagakusei_tokyo/" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/images/global/icon-line.svg" alt="LINE" loading="lazy" decoding="async" width="26" height="26">
+          </a>
+        </li>
+      </ul>
+      <div class="footer-privacy-policy">
+        <a href="/privacy-policy">プライバシーポリシー</a>
+      </div><!-- /.footer-privacy-policy -->
+    </div><!-- /.footer-links -->
+
+    <div class="footer-copyright">
+      <small aria-label="著作権 2026 Oita Campus Link">
+        &copy;2026 Oita Campus Link.
+      </small>
+    </div><!-- /.footer-copyright -->
+  </div><!-- /.l-container -->
+
+  <!-- トップへ戻るボタン -->
+  <!-- <a href="#" class="footer-to-page-top" aria-label="ページトップへ戻る">
+    <img
+      src="/assets/images/global/icon-to-page-top.svg"
+      alt=""
+      loading="lazy"
+      decoding="async"
+      width="22"
+      height="12"
+    />
+    <span aria-disabled="true">トップ</span> -->
+  </a><!-- /.to-page-top -->
+
+</footer>
+
+<style lang="scss">
+  @use "../../styles/breakpoints" as *;
+
+  .footer {
+    padding-block: 80px 40px;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    font-family: var(--font-family-serif);
+    font-weight: 700;
+  }
+
+  .footer-logo {
+    img {
+      max-width: 200px;
+    }
+  }
+
+  .footer-nav {
+    margin-block-start: 32px;
+  }
+
+  .footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-nav-item {
+    a {
+      display: block;
+      padding-block-end: 10px;
+      border-bottom: 1px solid;
+    }
+  }
+
+  .footer-cta {
+    margin-block-start: 64px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-block-start: 64px;
+  }
+
+  .footer-sns-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-sns-item {
+    img {
+      width: 24px;
+    }
+  }
+
+  .footer-privacy-policy {
+    a {
+      font-size: 12px;
+      text-decoration: underline;
+    }
+  }
+
+  .footer-copyright {
+    margin-block-start: 24px;
+    text-align: center;
+
+    small {
+      font-size: 12px;
+    }
+  }
+
+  .footer-to-page-top {
+
+  }
+
+  @include mq() {
+    .footer {
+      .l-container {
+        width: fit-content;
+      }
+    }
+
+    .footer-logo {
+      img {
+        max-width: 240px;
+      }
+    }
+
+    .footer-nav {
+      margin-block-start: 64px;
+    }
+
+    .footer-nav-list {
+      flex-direction: row;
+      justify-content: center;
+      gap: 49px;
+      gap: min(49px, calc(49 / 850 * 100vw));
+    }
+
+    .footer-nav-item {
+      font-size: min(16px, calc(16 / 850 * 100vw));
+
+      a {
+        padding-block: 8px;
+        border: none;
+      }
+
+      &:not(:last-child) {
+        position: relative;
+
+        &::after {
+          content: "";
+          width: 1px;
+          height: 1em;
+          background-color: var(--color-white);
+          position: absolute;
+          top: 50%;
+          right: max(-24px, calc(-24 / 850 * 100vw));
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .footer-cta {
+    }
+
+    .footer-links {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .footer-sns-list {
+      gap: 24px;
+    }
+
+    .footer-sns-item {
+      img {
+        width: 24px;
+      }
+    }
+
+    .footer-privacy-policy {
+      a {
+        font-size: 12px;
+        text-decoration: underline;
+      }
+    }
+
+    .footer-copyright {
+      margin-block-start: 24px;
+      text-align: center;
+
+      small {
+        font-size: 12px;
+      }
+    }
+
+    .footer-to-page-top {
+
+    }
+  }
+
+  @media (any-hover: hover) {
+    a {
+      transition: opacity .3s ease;
+      &:hover  {
+        opacity: .75;
+      }
+    }
+
+
+  }
+
+</style>

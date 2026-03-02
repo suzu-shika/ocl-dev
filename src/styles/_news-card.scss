@@ -1,0 +1,53 @@
+@use 'breakpoints' as *;
+
+.c-news-card {
+  display: flex;
+  flex-direction: column;
+  padding-block: 24px;
+  padding-inline: 16px;
+  // box-shadow: 4px 4px 6px 0 rgb(1 51 1 / .12);
+  box-shadow: 0px 4px 12px 0 rgb(1 51 1 / .15);
+
+  @media (any-hover: hover) {
+    &:hover img {
+      transform: scale(1.03);
+    }
+  }
+}
+
+.c-news-card-thumbnail {
+  overflow: hidden;
+
+  img {
+    height: auto;
+    aspect-ratio: 318 / 208;
+    object-fit: cover;
+    transition: transform .3s;
+  }
+}
+
+.c-news-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block-start: 16px;
+  line-height: 1.5;
+}
+
+.c-news-card-category {
+  padding-block: 4px;
+  padding-inline: 10px;
+  background-color:  var(--color-sub-green1);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.c-news-card-date {
+  font-size: 14px;
+}
+
+.c-news-card-title {
+  margin-block-start: 24px;
+  text-align: left;
+  line-height: 1.5;
+}

@@ -1,0 +1,186 @@
+---
+import Button from "./Button.astro";
+---
+
+<div id="slider2" class="splide c-activity-reports-splide" role="group" aria-labelledby="networking-events-carousel-heading">
+  <div class="splide__track c-activity-reports-splide-track">
+    <ul class="splide__list c-activity-reports-list">
+      <li class="splide__slide c-activity-reports-item">
+        <h4 class="c-activity-reports-title">
+          <span class="c-activity-reports-title-date">2025年1月1日</span>
+          <span class="c-activity-reports-title-text">大分交流会・NPO法人設立記念会</span>
+        </h4>
+        <div class="c-activity-reports-thumbnail">
+          <img src="../../../public/assets/images/activities/pic-activities-networking-events01@2x.jpg" alt="" loading="lazy" decoding="async" width="310" height="200">
+        </div><!-- /.c-activity-reports-thumbnail -->
+        <p class="c-activity-reports-text">約50名の学生および社会人を招き、交流会を開催しました。<br>本団体のNPO法人化についてもご報告し、多くの方に今後の活動への期待を寄せていただきました。</p>
+        <div class="c-activity-reports-btn">
+          <Button
+            buttonClass="c-btn"
+            buttonUrl="#"
+            buttonText="詳しく見る"
+            buttonAriaLabel="レポートの詳細を見る"
+          />
+        </div><!-- /.c-activity-reports-btn -->
+      </li>
+      <li class="splide__slide c-activity-reports-item">
+        <h4 class="c-activity-reports-title">
+          <span class="c-activity-reports-title-date">2024年1月1日</span>
+          <span class="c-activity-reports-title-text">大分県知事懇親会</span>
+        </h4>
+        <div class="c-activity-reports-thumbnail">
+          <img src="../../../public/assets/images/global/pic-news-noimage@2x.png" alt="" loading="lazy" decoding="async" width="318" height="208">
+        </div><!-- /.c-activity-reports-thumbnail -->
+        <p class="c-activity-reports-text">2024年1月1日。大分県知事をお招きし、学生40名を対象に、大分県の現状や日本の社会情勢についてお話しいただきました。<br>質疑応答にも応じていただき、学生にとって非常に貴重な学びの機会となりました。</p>
+        <div class="c-activity-reports-btn">
+          <Button
+            buttonClass="c-btn"
+            buttonUrl="#"
+            buttonText="詳しく見る"
+            buttonAriaLabel="レポートの詳細を見る"
+          />
+        </div><!-- /.c-activity-reports-btn -->
+      </li>
+      <li class="splide__slide c-activity-reports-item">
+        <h4 class="c-activity-reports-title">
+          <span class="c-activity-reports-title-date">2025年1月1日</span>
+          <span class="c-activity-reports-title-text">大分交流会・NPO法人設立記念会</span>
+        </h4>
+        <div class="c-activity-reports-thumbnail">
+          <img src="../../../public/assets/images/activities/pic-activities-networking-events01@2x.jpg" alt="" loading="lazy" decoding="async" width="310" height="200">
+        </div><!-- /.c-activity-reports-thumbnail -->
+        <p class="c-activity-reports-text">約50名の学生および社会人を招き、交流会を開催しました。<br>本団体のNPO法人化についてもご報告し、多くの方に今後の活動への期待を寄せていただきました。</p>
+        <div class="c-activity-reports-btn">
+          <Button
+            buttonClass="c-btn"
+            buttonUrl="#"
+            buttonText="詳しく見る"
+            buttonAriaLabel="レポートの詳細を見る"
+          />
+        </div><!-- /.c-activity-reports-btn -->
+      </li>
+    </ul>
+  </div><!-- /.splide__track.c-activity-reports-splide-track -->
+</div><!-- /.splide -->
+
+<script>
+  var splide = new Splide( '#slider2', {
+    perPage: 2,
+    focus: 0,
+    omitEnd: true,
+    gap : '24px',
+    breakpoints: {
+      767: {
+        perPage: 1,
+        gap : '24px',
+      },
+    },
+    classes: {
+      pagination: "splide__pagination c-activity-reports-pagination",
+      page: "splide__pagination__page c-activity-reports-page",
+    },
+    arrows: false,
+  } );
+
+  splide.mount();
+</script>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .splide {
+
+  }
+
+  .c-activity-reports-splide {
+
+  }
+
+  .splide__track {
+
+  }
+
+  .c-activity-reports-splide-track {
+
+  }
+
+  .splide__list {
+
+  }
+
+  .c-activity-reports-list {
+
+  }
+
+  .splide__slide {
+
+  }
+
+  .c-activity-reports-item {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-block: 40px;
+    padding-inline: calc(20px / var(--width-sp) * 100vw);
+    background-color: var(--color-white);
+
+    @include mq() {
+      padding-inline: 24px;
+    }
+  }
+
+  .c-activity-reports-title {
+    display: grid;
+    font-family: var(--font-family-serif);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .c-activity-reports-title-date {
+    font-size: 16px;
+  }
+
+  .c-activity-reports-title-text {
+    
+  }
+
+  .c-activity-reports-thumbnail {
+
+    img {
+      height: auto;
+      aspect-ratio: 310 / 200;
+      object-fit: cover;
+    }
+  }
+
+  .c-activity-reports-text {
+    text-align: justify;
+  }
+
+  .c-activity-reports-btn {
+    margin-block-start: auto;
+    text-align: center;
+  }
+
+  // pagination
+  .c-activity-reports-pagination {
+    bottom: calc(-16px + -32px);
+  }
+
+  .c-activity-reports-page {
+    width: 16px;
+    height: 16px;
+    margin-block: 0;
+    margin-inline: 8px;
+    background-color: var(--color-white);
+    opacity: 1;
+
+    &.is-active {
+      background-color: var(--color-green);
+      transform: none;
+    }
+  }
+
+</style>

@@ -1,0 +1,86 @@
+---
+import "../styles/style.scss";
+import Header from "../components/common/Header.astro";
+import Footer from "../components/common/Footer.astro";
+
+const logo = "/assets/images/global/logo.svg";
+const logoAlt = "Oita Campus Link";
+const {
+  title = "自然豊かな環境でのびのびと成長する習志野市の幼稚園｜みもみ幼稚園",
+  ogType = "website",
+  ogTitle = title,
+  description = "京成実籾駅徒歩3分のみもみ幼稚園は、自然に囲まれた広い敷地でのびのび遊び、学べる環境です。自由と自立を育む教育を行っています。習志野市・船橋市・八千代市・千葉市からもアクセス良好です。見学も随時受付中です。",
+  ogDescription = description,
+  ogImage = "https://www.mimomi-youchien.com/ogp.webp",
+  noIndex = false,
+  jsonLd = ""
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+
+    { noIndex && <meta name="robots" content="noindex, nofollow" /> }
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/android-chrome-256x256.png">
+
+    <!-- ogp -->
+    <meta property="og:site_name" content="学校法人飯生学園 みもみ幼稚園">
+    <meta property="og:url" content={`https://www.mimomi-youchien.com${Astro.url.pathname}`} />
+    <meta property="og:type" content={ogType}>
+    <meta property="og:title" content={ogTitle}>
+    <meta property="og:description" content={ogDescription}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content={ogDescription}>
+    <meta name="twitter:image:src" content={ogImage}>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Noto+Serif+JP:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Spride -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js" defer></script>
+
+    <!-- destyle.css（preload+onload） -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.min.css"></noscript>
+
+    <!-- AstroビルドCSSのpreload+onload -->
+    <link rel="preload" href="/_astro/index.Y_5S2fcT.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/_astro/index.Y_5S2fcT.css"></noscript>
+
+
+
+    <!-- 構造化データ -->
+    {jsonLd && (
+      <script type="application/ld+json" set:html={jsonLd}></script>
+    )}
+  </head>
+
+  <body id="body">
+    <Header
+      logo={logo}
+      logoAlt={logoAlt}
+    />
+
+    <slot />
+
+    <Footer
+      logo={logo}
+      logoAlt={logoAlt}
+    />
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>

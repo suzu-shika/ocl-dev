@@ -1,0 +1,37 @@
+@use 'breakpoints' as *;
+
+.c-heading-md {
+  font-family: var(--font-family-serif);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+
+  @include mq() {
+    font-size: 24px;
+  }
+
+  &--green {
+    color: var(--color-green);
+  }
+}
+
+.c-heading-sm {
+  font-family: var(--font-family-serif);
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+
+  @include mq() {
+    font-size: 20px;
+  }
+
+  &--green {
+    color: var(--color-green);
+  }
+
+  &--sub-green {
+    color: var(--color-sub-green2);
+  }
+}

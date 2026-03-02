@@ -1,0 +1,73 @@
+---
+import Button from "../common/Button.astro";
+---
+
+<section class="activities-corporate-partners">
+  <div class="l-container-s">
+    <div class="l-section">
+      <div class="activities-corporate-partners-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">共創パートナーを募集しています</h2>
+          <span class="c-title-en" aria-hidden="true">Corporate Partners</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.activities-corporate-partners-title -->
+
+      <div class="l-section-body">
+        <div class="activities-corporate-partners-description">
+          <p class="activities-corporate-partners-text">Oita Campus Linkは、学生だけで活動する法人ではありません。<br>企業や行政、地域の皆さまと共に、学生が社会とつながる機会をつくり続けています。</p>
+          <p class="activities-corporate-partners-text">学生との共同プロジェクトに関心のある企業の方、学生と地域をつなぐ取り組みを検討されている行政・団体の方、ぜひ一度、お話を聞かせてください。</p>
+        </div><!-- /.activities-corporate-partners-description -->
+
+        <div class="activities-corporate-partners-btn">
+          <Button
+            buttonClass="c-btn c-btn--arrow"
+            buttonUrl="/contact"
+            buttonText="学生との共創について相談する"
+          />
+        </div><!-- /.activities-corporate-partners-btn -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container-s -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .activities-corporate-partners {
+    background-color: var(--color-sub-green1);
+  }
+
+  .activities-corporate-partners-title {
+    .c-title-ja {
+      width: fit-content;
+      margin-inline: auto;
+      text-align: justify;
+    }
+
+    .c-title-en {
+      text-align: center;
+    }
+  }
+
+  .activities-corporate-partners-description {
+
+  }
+
+  .activities-corporate-partners-text {
+    text-align: justify;
+
+    & + & {
+      margin-block-start: 16px;
+    }
+  }
+
+  .activities-corporate-partners-btn {
+    margin-block-start: 56px;
+    text-align: center;
+
+    @include mq() {
+      margin-block-start: 80px;
+    }
+  }
+
+</style>

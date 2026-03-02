@@ -1,0 +1,73 @@
+---
+
+---
+
+<section class="activities-background">
+  <div class="l-container-s">
+    <div class="activities-background-section l-section">
+      <div class="activities-background-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">活動の背景</h2>
+          <span class="c-title-en" aria-hidden="true">Background</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.activities-background-title -->
+
+      <div class="l-section-body">
+        <div class="activities-background-image">
+          <img src="../../../public/assets/images/activities/pic-activities-background@2x.png" alt="" loading="lazy" decoding="async" width="350" height="230">
+        </div><!-- /.activities-background-image -->
+        <div class="activities-background-title-lv3">
+          <h3 class="c-heading-md c-heading-md--green">この活動が生まれた理由</h3>
+        </div><!-- /.activities-background-title-lv3 -->
+        <p class="activities-background-text">私は、自分のしたいことがないまま大学の進路を進めました。</p>
+        <p class="activities-background-text">高校生時代、将来の夢を語る友人を見るたびに、自分だけが置いていかれているような気がして、焦りを感じていました。大学生になっても「これがしたい」と強く思えるものは見つからず、そのまま時間だけが過ぎていく日々が続いていました。</p>
+        <p class="activities-background-text">そんな時に、大分県出身の学生と社会人が交流する場に参加する機会がありました。そこには、自分が何をしていて、これから何をやりたいのかを語る大人や学生が集まっていました。その光景は、私にとって大きな衝撃であり、同時に憧れでもありました。</p>
+        <p class="activities-background-text">「この経験を、自分だけでなく、もっと多くの学生に届けたい」<br>そう思ったことが、Oita Campus Linkの活動の原点です。</p>
+      </div><!-- /.l-section-body -->
+    </div><!-- /.activities-background-section.l-section -->
+  </div><!-- /.l-container-s -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .activities-background {
+
+  }
+
+  .activities-background-section.l-section {
+    padding-block-start: 0;
+  }
+
+  .activities-background-title {
+    text-align: center;
+  }
+
+  .activities-background-image {
+
+    img {
+
+    }
+  }
+
+  .activities-background-title-lv3 {
+    margin-block-start: 32px;
+
+    @include mq() {
+      margin-block-start: 64px;
+    }
+  }
+  .activities-background-text {
+    margin-block-start: 32px;
+    text-align: justify;
+
+    @include mq() {
+      margin-block-start: 40px;
+    }
+
+    & + & {
+      margin-block-start: 16px;
+    }
+  }
+
+</style>

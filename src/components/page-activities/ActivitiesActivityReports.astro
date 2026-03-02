@@ -1,0 +1,113 @@
+---
+import NetworkingEvents from "../common/NetworkingEvents.astro";
+import CoCreation from "../common/CoCreation.astro";
+import Button from "../common/Button.astro";
+---
+
+<section class="activities-activity-reports">
+  <div class="l-container-s">
+    <div class="l-section">
+      <div class="activities-activity-reports-title">
+        <div class="c-title">
+          <h2 class="c-title-ja c-title-ja--white">活動実績</h2>
+          <span class="c-title-en c-title-en--white" aria-hidden="true">Activity Reports</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.activities-activity-reports-title -->
+
+      <div class="activities-activity-reports-list">
+        <section class="activities-activity-reports-item">
+          <h3 class="activities-activity-reports-item-title" id="networking-events-carousel-heading">交流会</h3>
+          <p class="activities-activity-reports-item-text">学生同士だけでなく社会人の方々とも繋がる機会を提供する交流会です。</p>
+          <div class="activities-activity-reports-content">
+            <NetworkingEvents />
+          </div><!-- /.activities-activity-reports-content -->
+        </section>
+        <section class="activities-activity-reports-item">
+          <h3 class="activities-activity-reports-item-title" id="co-creation-carousel-heading">共創支援</h3>
+          <p class="activities-activity-reports-item-text">学生と企業・行政の連携を支援した取り組みをご紹介します。</p>
+          <div class="activities-activity-reports-content">
+            <CoCreation />
+          </div><!-- /.activities-activity-reports-content -->
+        </section>
+      </div><!-- /.activities-activity-reports-list -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container-s -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .activities-activity-reports {
+    background-color: var(--color-sub-green2);
+
+    .l-section {
+      padding-block-end: calc(80px + 16px + 32px);
+    }
+  }
+
+  .activities-activity-reports-title {
+    text-align: center;
+  }
+
+  .activities-activity-reports-list {
+    display: grid;
+    gap: calc(80px + 16px + 32px);
+    margin-block-start: 40px;
+  }
+
+  .activities-activity-reports-item {
+
+  }
+
+  .activities-activity-reports-item-title {
+    color: var(--color-white);
+    font-family: var(--font-family-serif);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .activities-activity-reports-item-text {
+    margin-block-start: 32px;
+    color: var(--color-white);
+    text-align: justify;
+  }
+
+  .activities-activity-reports-content {
+    margin-block-start: 32px;
+  }
+
+  @include mq() {
+    .activities-activity-reports {
+      .l-section {
+        padding-block-end: calc(120px + 16px + 32px);
+      }
+    }
+
+    .activities-activity-reports-list {
+      gap: calc(100px + 16px + 32px);
+      margin-block-start: 48px;
+    }
+
+    .activities-activity-reports-item {
+
+    }
+
+    .activities-activity-reports-item-title {
+      font-size: 26px;
+    }
+
+    .activities-activity-reports-item-text {
+      margin-block-start: 40px;
+      text-align: center;
+    }
+
+    .activities-activity-reports-content {
+      margin-block-start: 40px;
+    }
+
+  }
+
+
+</style>

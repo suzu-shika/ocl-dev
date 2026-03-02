@@ -1,0 +1,65 @@
+---
+import Button from "../common/Button.astro";
+---
+
+<section class="top-faq">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="top-faq-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">よくあるご質問</h2>
+          <span class="c-title-en" aria-hidden="true">FAQ</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.top-faq-title -->
+
+      <div class="l-section-body">
+        <dl class="c-faq-list">
+          <div class="c-faq-item">
+            <dt class="c-faq-q">Oita Campus Linkはどのような法人ですか？</dt>
+            <dd class="c-faq-a">Oita Campus Linkは、学生が社会と関わり、価値を提供する経験ができる機会をつくるNPO法人です。<br>交流会の企画・運営や、学生と企業・行政をつなぐ取り組みを行っています。</dd>
+          </div><!-- /.c-faq-item -->
+          <div class="c-faq-item">
+            <dt class="c-faq-q">企業や行政は、どのように関わることができますか？</dt>
+            <dd class="c-faq-a">学生との取り組みへの参加や、交流会への関わり、協賛・賛助会員としてのご支援など、さまざまな形で関わっていただけます。<br>内容や関わり方については、ご相談しながら整理していきます。</dd>
+          </div><!-- /.c-faq-item -->
+          <div class="c-faq-item">
+            <dt class="c-faq-q">具体的な内容が決まっていなくても、相談できますか？</dt>
+            <dd class="c-faq-a">はい、問題ありません。<br>「まずは話を聞いてみたい」「活動について詳しく知りたい」といった段階でのご相談も歓迎しています。</dd>
+          </div><!-- /.c-faq-item -->
+        </dl>
+
+        <div class="top-faq-btn">
+          <Button
+            buttonClass="c-btn c-btn--arrow"
+            buttonUrl="/faq"
+            buttonText="よくあるご質問を見る"
+          />
+        </div><!-- /.top-faq-btn -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-faq {
+
+  }
+
+  .top-faq-title {
+
+  }
+
+  .top-faq-btn {
+    margin-block-start: 56px;
+    text-align: center;
+  }
+
+  @include mq() {
+    .top-faq-btn {
+      margin-block-start: 80px;
+    }
+  }
+
+</style>

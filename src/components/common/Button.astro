@@ -1,0 +1,84 @@
+---
+const { buttonClass, buttonUrl, buttonText, buttonAriaLabel, buttonTarget } = Astro.props;
+---
+
+<div class={buttonClass}>
+  <a href={buttonUrl} target={buttonTarget} rel={buttonTarget === "_blank" ? "noopener noreferrer" : undefined} aria-label={buttonAriaLabel}>{buttonText}</a>
+</div>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-btn {
+    line-height: 1.5;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: .5em;
+      padding-bottom: calc(.5em - 1px);
+      border-bottom: solid 1px;
+      color: var(--color-green);
+      font-family: var(--font-family-serif);
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &--arrow {
+      a {
+
+        &::after {
+          content: "";
+          width: 32px;
+          height: 18px;
+          margin-left: 1.5em;
+          background-image: url(../../public/assets/images/global/icon-arrow-green.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
+          transition: transform .3s;
+        }
+
+        &:hover::after {
+          transform: translateX(.25em);
+        }
+      }
+    }
+
+    &--white {
+      a {
+        color: var(--color-white);
+
+        &::after {
+          background-image: url(../../public/assets/images/global/icon-arrow-white.svg);
+        }
+      }
+    }
+
+    &--mail-icon {
+      a::before {
+        content: "";
+        width: 22px;
+        height: 17px;
+        background-image: url(../../public/assets/images/global/icon-mail-white.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+
+    &--mail-icon-green {
+      a::before {
+        background-image: url(../../public/assets/images/global/icon-mail-green.svg);
+      }
+    }
+
+    &--no-border {
+      a {
+        padding-block: .25em;
+        border: none;
+      }
+    }
+  }
+
+</style>

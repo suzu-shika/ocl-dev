@@ -1,0 +1,111 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="c-cta-area">
+  <div class="l-container">
+    <div class="c-cta-area-head">
+      <h2 class="c-cta-area-title">共創・協賛に関する<br class="u-no-pc">お問い合わせはこちら</h2>
+      <span class="c-cta-area-title-en" aria-hidden="true">Contact Us</span>
+    </div><!-- /.c-cta-area-head -->
+    <p class="c-cta-area-text">学生との共同プロジェクト、協賛・賛助に関するご相談など、<br class="u-no-sp">Oita Campus Linkへの関わり方についてお気軽にお問い合わせください。</p>
+    <div class="c-cta-area-btn">
+      <Button
+        buttonClass="c-btn c-btn--arrow c-btn--mail-icon c-btn--mail-icon-green"
+        buttonUrl="/contact"
+        buttonText="お問い合わせ・ご相談"
+        buttonAriaLabel="お問い合わせ・ご相談をする"
+      />
+    </div><!-- /.c-cta-area-btn -->
+  </div><!-- /.l-container -->
+</section>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-cta-area {
+    padding-block: 208px 80px;
+    background-image: url(../../../public/assets/images/global/bg-cta-area@2x.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+  }
+
+  .c-cta-area-head {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 48px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: -32px;
+    left: 0;
+  }
+
+  .c-cta-area-title {
+    font-family: var(--font-family-serif);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .c-cta-area-title-en {
+    color: var(--color-green);
+    font-family: var(--font-family-en);
+    font-size: 64px;
+    line-height: 1;
+  }
+
+  .c-cta-area-text {
+    text-align: justify;
+  }
+
+  .c-cta-area-btn {
+    margin-block-start: 56px;
+    text-align: center;
+  }
+
+  @include mq() {
+    .c-cta-area {
+      padding-block: 210px 120px;
+    }
+  
+    .c-cta-area-head {
+      // display: flex;
+      // flex-direction: column-reverse;
+      gap: 52px;
+      // width: 100%;
+      // text-align: center;
+      // position: absolute;
+      // top: -32px;
+      // left: 0;
+    }
+
+    .c-cta-area-title {
+      // font-family: var(--font-family-serif);
+      font-size: 32px;
+      // font-weight: 700;
+      // line-height: 1.5;
+    }
+
+    .c-cta-area-title-en {
+      // color: var(--color-green);
+      // font-family: var(--font-family-en);
+      // font-size: 64px;
+      // line-height: 1;
+    }
+
+    .c-cta-area-text {
+      // text-align: justify;
+      width: fit-content;
+      margin-inline: auto;
+    }
+
+    .c-cta-area-btn {
+      margin-block-start: 80px;
+    }
+
+  }
+
+</style>

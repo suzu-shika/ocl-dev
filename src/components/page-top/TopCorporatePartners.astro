@@ -1,0 +1,115 @@
+---
+
+---
+
+<section class="top-corporate-partners">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="top-corporate-partners-title">
+        <div class="c-title">
+          <h2 class="c-title-ja c-title-ja--white">パートナー企業紹介</h2>
+          <span class="c-title-en c-title-en--white" aria-hidden="true">Corporate Partners</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.top-corporate-partners-title -->
+
+      <ul class="top-corporate-partners-list">
+        <li class="top-corporate-partners-item">
+          <a href="https://www.pref.oita.jp/" target="_blank">
+            <img src="../../../public/assets/images/top/logo-top-corporate-partners-01@2x.png" alt="大分県" loading="lazy" decoding="async" width="215" height="120">
+          </a>
+        </li>
+        <li class="top-corporate-partners-item">
+          <a href="https://www.instagram.com/oitagakusei_tokyo/" target="_blank">
+            <img src="../../../public/assets/images/top/logo-top-corporate-partners-02@2x.png" alt="Oita Campus Link" loading="lazy" decoding="async" width="215" height="126">
+          </a>
+        </li>
+        <li class="top-corporate-partners-item">
+          <a href="#" target="_blank">
+            <img src="../../../public/assets/images/top/logo-top-corporate-partners-03@2x.png" alt="Bell Dear Web Production" loading="lazy" decoding="async" width="235" height="54">
+          </a>
+        </li>
+      </ul>
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-corporate-partners {
+    padding-block-end: 80px;
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 21%, rgba(0, 51, 0, 1) 86%);
+  }
+
+  .top-corporate-partners-title {
+    // text-align: center;
+    width: 280px;
+    margin-inline: auto;
+  }
+
+  .top-corporate-partners-list {
+    display: grid;
+    gap: 56px;
+    width: 280px;
+    margin-block-start: 56px;
+    margin-inline: auto;
+  }
+
+  .top-corporate-partners-item {
+    width: inherit;
+    background-color: var(--color-white);
+    // box-shadow: 4px 4px 6px 0 rgb(1 51 1 / .12);
+    box-shadow: 0px 4px 12px 0 rgb(1 51 1 / .15);
+
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 280 / 160;
+    }
+
+    img {
+      width: 215px;
+    }
+  }
+
+  @include mq() {
+    .top-corporate-partners {
+      padding-block-end: 80px; // ←調整必要！！！！
+    }
+
+    .top-corporate-partners-title {
+      // text-align: center;
+      width: 100%;
+      // margin-inline: auto;
+    }
+
+    .top-corporate-partners-list {
+      // display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      // gap: 40px;
+      // gap: min(32px, calc(32px / var(--width-pc) * 100vw));
+      gap: 24px;
+      width: 100%;
+      margin-block-start: 48px;
+      // margin-inline: auto;
+    }
+
+    .top-corporate-partners-item {
+      width: initial;
+
+      a {
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // aspect-ratio: 280 / 160;
+      }
+
+      img {
+        width: min(215px, calc(215px / var(--width-pc) * 100vw));
+      }
+    }
+  }
+</style>

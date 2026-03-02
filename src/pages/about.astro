@@ -1,0 +1,81 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeadingLv1 from "../components/common/HeadingLv1.astro";
+import AboutLead from "../components/page-about/AboutLead.astro";
+import AboutMessage from "../components/page-about/AboutMessage.astro";
+import AboutPhilosophy from "../components/page-about/AboutPhilosophy.astro";
+import AboutOrganizationProfile from "../components/page-about/AboutOrganizationProfile.astro"
+import AboutLinks from "../components/page-about/AboutLinks.astro"
+import AboutMembers from "../components/page-about/AboutMembers.astro"
+import BreadCrumb from "../components/common/Breadcrumb.astro";
+import CtaArea from "../components/common/CtaArea.astro";
+---
+
+<Layout
+  title="よくある質問 about｜習志野市の幼稚園｜みもみ幼稚園"
+  ogType="website"
+  description="習志野市のみもみ幼稚園に関する、よくある質問をカテゴリー別にご紹介しています。預かり保育や給食から、子どもの成長に関することまで、安心してご利用いただけるよう丁寧にお答えしています。"
+>
+  <div class="about">
+    <div class="about-heading-lv1">
+      <HeadingLv1
+        headingTitle="Oita Campus Linkについて"
+        headingTitleEn="About Us"
+        headingClass="l-container-s"
+      />
+    </div><!-- /.about-heading-lv1 -->
+
+    <main class="about-main">
+      <div class="about-content">
+        <!-- about-lead -->
+        <AboutLead />
+
+        <!-- about-message -->
+        <AboutMessage />
+
+        <!-- about-philosophy -->
+        <AboutPhilosophy />
+
+        <!-- about-organization-profile -->
+        <AboutOrganizationProfile />
+
+        <!-- about-links -->
+        <AboutLinks />
+
+        <!-- about-members -->
+        <AboutMembers />
+      </div><!-- /.about-content -->
+
+      <!-- breadcrumb -->
+      <BreadCrumb />
+    </main>
+
+    <!-- cta-area -->
+    <CtaArea />
+  </div><!-- /.about -->
+</Layout>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+
+  .about {
+
+  }
+
+  .about-heading-lv1 {
+
+  }
+
+  .about-main {
+
+  }
+
+  .about-content {
+    margin-block-start: 40px;
+
+    @include mq() {
+      margin-block-start: 100px;
+    }
+  }
+
+</style>

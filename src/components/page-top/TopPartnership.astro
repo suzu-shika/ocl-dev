@@ -1,0 +1,169 @@
+---
+import Button from "../common/Button.astro";
+---
+
+<section class="top-partnership">
+  <div class="l-container">
+    <div class="l-section">
+      <div class="top-partnership-title">
+        <div class="c-title">
+          <h2 class="c-title-ja c-title-ja--white">共に取り組むパートナーを募集しています</h2>
+          <span class="c-title-en c-title-en--white" aria-hidden="true">Partnership</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.top-partnership-title -->
+
+      <div class="l-section-body">
+        <p class="top-partnership-lead">Oita Campus Linkは、学生だけで活動する法人ではありません。<br>学生の視点が、企業・行政や地域に新たな気づきをもたらす場でもあります。</p>
+        <div class="top-partnership-gallery">
+          <div class="top-partnership-image">
+            <img src="../../../public/assets/images/top/pic-top-partnership-01@2x.png" alt="" loading="lazy" decoding="async" width="350" height="230">
+          </div><!-- /.top-partnership-image -->
+          <div class="top-partnership-image">
+            <img src="../../../public/assets/images/top/pic-top-partnership-02@2x.png" alt="" loading="lazy" decoding="async" width="350" height="230">
+          </div><!-- /.top-partnership-image -->
+          <div class="top-partnership-image">
+            <img src="../../../public/assets/images/top/pic-top-partnership-03@2x.png" alt="" loading="lazy" decoding="async" width="350" height="230">
+          </div><!-- /.top-partnership-image -->
+        </div><!-- /.top-partnership-gallery -->
+        <div class="top-partnership-description">
+          <p class="top-partnership-text">パートナーシップの形態として、以下の2つがあります。</p>
+          <ul class="top-partnership-list">
+            <li class="top-partnership-item">学生と共にプロジェクトを進める「共創パートナー」</li>
+            <li class="top-partnership-item">活動を支援する「協賛・賛助会員」</li>
+          </ul>
+          <p class="top-partnership-text">ご関心のある形については、お問い合わせの際にお選びいただけます。</p>
+        </div><!-- /.top-partnership-description -->
+        <div class="top-partnership-btn">
+          <Button
+            buttonClass="c-btn c-btn--arrow"
+            buttonUrl="/contact"
+            buttonText="共創・支援について相談する"
+          />
+        </div><!-- /.top-partnership-btn -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container -->
+</section>
+
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .top-partnership {
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 21%, rgba(0, 51, 0, 1) 86%);
+  }
+
+  .top-partnership-lead {
+    color: var(--color-white);
+  }
+
+  .top-partnership-gallery {
+    display: grid;
+    gap: 24px;
+    margin-block-start: 32px;
+  }
+
+  .top-partnership-image {
+
+  }
+
+  .top-partnership-description {
+    display: grid;
+    gap: 8px;
+    margin-block-start: 32px;
+  }
+
+  .top-partnership-text {
+
+  }
+
+  .top-partnership-list {
+    display: grid;
+    gap: 8px;
+  }
+
+  .top-partnership-item {
+    display: flex;
+    gap: 8px;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 19px;
+      margin-block-start: .2em;
+      background-image: url(../../../public/assets/images/global/icon-check.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      // position: absolute;
+      // top: 0;
+      // left: 0;
+    }
+  }
+
+  .top-partnership-btn {
+    margin-block-start: 56px;
+    text-align: center;
+  }
+
+  @include mq() {
+    .top-partnership {
+      // background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 21%, rgba(0, 51, 0, 1) 86%);
+    }
+
+    .top-partnership-lead {
+    }
+
+    .top-partnership-gallery {
+      // display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      gap: calc(20px / var(--width-pc) * 100vw);
+      margin-block-start: 40px;
+    }
+
+    .top-partnership-image {
+
+    }
+
+    .top-partnership-description {
+      // display: grid;
+      // gap: 8px;
+      margin-block-start: 40px;
+    }
+
+    .top-partnership-text {
+
+    }
+
+    .top-partnership-list {
+      // display: grid;
+      // gap: 8px;
+    }
+
+    .top-partnership-item {
+      // display: flex;
+      // gap: 8px;
+
+      &::before {
+        // content: "";
+        // width: 20px;
+        // height: 19px;
+        // margin-block-start: .2em;
+        // background-image: url(../../../public/assets/images/global/icon-check.svg);
+        // background-repeat: no-repeat;
+        // background-size: contain;
+        // background-position: center center;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+      }
+    }
+
+    .top-partnership-btn {
+      margin-block-start: 80px;
+      // text-align: center;
+    }
+  }
+
+</style>

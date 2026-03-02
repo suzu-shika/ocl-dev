@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeadingLv1 from "../components/common/HeadingLv1.astro";
+import BreadCrumb from "../components/common/Breadcrumb.astro";
+import CtaArea from "../components/common/CtaArea.astro";
+---
+
+<Layout
+  title="よくある質問 FAQ｜習志野市の幼稚園｜みもみ幼稚園"
+  ogType="website"
+  description="習志野市のみもみ幼稚園に関する、よくある質問をカテゴリー別にご紹介しています。預かり保育や給食から、子どもの成長に関することまで、安心してご利用いただけるよう丁寧にお答えしています。"
+>
+  <div class="faq">
+    <div class="faq-heading-lv1">
+      <HeadingLv1
+        headingTitle="よくあるご質問"
+        headingTitleEn="FAQ"
+      />
+    </div><!-- /.faq-heading-lv1 -->
+
+    <main class="faq-main">
+      <div class="faq-content">
+        <div class="l-container">
+          <dl class="c-faq-list">
+            <div class="c-faq-item">
+              <dt class="c-faq-q">Oita Campus Linkはどのような法人ですか？</dt>
+              <dd class="c-faq-a">Oita Campus Linkは、学生が社会と関わり、価値を提供する経験ができる機会をつくるNPO法人です。<br>交流会の企画・運営や、学生と企業・行政をつなぐ取り組みを行っています。</dd>
+            </div><!-- /.c-faq-item -->
+            <div class="c-faq-item">
+              <dt class="c-faq-q">営利目的の法人ですか？</dt>
+              <dd class="c-faq-a">いいえ、営利を目的とした法人ではありません。<br>学生の学びや成長、地域とのつながりを重視し、活動の趣旨に賛同いただいた企業・団体の皆さまと協力しながら活動しています。</dd>
+            </div><!-- /.c-faq-item -->
+            <div class="c-faq-item">
+              <dt class="c-faq-q">学生主体とのことですが、活動は継続的に行われていますか？</dt>
+              <dd class="c-faq-a">はい、学年を越えた体制づくりや役割分担を行い、特定の個人に依存しない運営を心がけています。<br>今後も継続的な活動ができるよう、組織体制の整備を進めています。</dd>
+            </div><!-- /.c-faq-item -->
+            <div class="c-faq-item">
+              <dt class="c-faq-q">企業や行政は、どのように関わることができますか？</dt>
+              <dd class="c-faq-a">学生との共同プロジェクトへの参画、交流イベントへの参加、協賛・賛助会員としてのご支援など、さまざまな形で関わっていただけます。<br>その中でも、学生と企業・行政が協力して取り組むプロジェクト型の関わりについては、参画する学生の関心や希望を主軸として、企業・行政の皆さまと相談しながら内容を決定しています。<br>Oita Campus Linkは、その出会いや調整をサポートする役割を担っています。</dd>
+            </div><!-- /.c-faq-item -->
+            <div class="c-faq-item">
+              <dt class="c-faq-q">特定の政治・宗教団体と関係はありますか？</dt>
+              <dd class="c-faq-a">いいえ、特定の政治団体や宗教団体とは一切関係ありません。<br>どなたでも安心して関わっていただける、開かれた法人運営を大切にしています。</dd>
+            </div><!-- /.c-faq-item -->
+            <div class="c-faq-item">
+              <dt class="c-faq-q">学生以外でも参加・支援は可能ですか？</dt>
+              <dd class="c-faq-a">はい、可能です。<br>社会人の方や企業・団体の皆さまにも、交流会やプロジェクトを通じて学生と関わっていただいています。学生と社会をつなぐ存在としてのご参加を歓迎しています。</dd>
+            </div><!-- /.c-faq-item -->
+            <div class="c-faq-item">
+              <dt class="c-faq-q">まずは話を聞いてみたいのですが、問い合わせても大丈夫ですか？</dt>
+              <dd class="c-faq-a">もちろんです。<br>具体的な検討段階でなくても問題ありません。活動内容やこれまでの取り組みについて、ご説明させていただきますので、お気軽にお問い合わせください。</dd>
+            </div><!-- /.c-faq-item -->
+          </dl>
+        </div><!-- /.l-container -->
+      </div><!-- /.faq-content -->
+
+      <!-- breadcrumb -->
+      <BreadCrumb />
+    </main>
+
+    <!-- cta-area -->
+    <CtaArea />
+  </div><!-- /.faq -->
+</Layout>
+
+<style lang="scss">
+  @use '../styles/breakpoints' as *;
+
+  .faq {
+
+  }
+
+  .faq-heading-lv1 {
+
+  }
+
+  .faq-main {
+
+  }
+
+  .faq-content {
+    margin-block-start: 40px;
+  }
+
+</style>

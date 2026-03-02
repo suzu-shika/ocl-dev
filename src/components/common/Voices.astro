@@ -1,0 +1,142 @@
+---
+
+---
+
+<div id="slider1" class="splide c-voices-splide" role="group" aria-labelledby="voices-carousel-heading">
+  <div class="splide__track c-voices-splide-track">
+    <ul class="splide__list c-voices-list">
+      <li class="splide__slide c-voices-item">
+        <span class="c-voices-category">学生</span>
+        <p class="c-voices-text">社会人の方と一緒に考える経験は初めてでした。<br>自分の考えが社会とつながる感覚を持てたことが、大きな自信になりました。</p>
+        <span class="c-voices-name">山田 太郎 様（大学2年生）</span>
+      </li>
+      <li class="splide__slide c-voices-item">
+        <span class="c-voices-category">企業</span>
+        <p class="c-voices-text">学生の率直な視点に、多くの気づきを得ました。<br>一方的に支援する関係ではなく、対話を通じた学びの場だと感じています。</p>
+        <span class="c-voices-name">H.S. 様（企業担当者）</span>
+      </li>
+      <li class="splide__slide c-voices-item">
+        <span class="c-voices-category">行政</span>
+        <p class="c-voices-text">学生が主体的に社会と関わろうとする姿勢が印象的でした。<br>行政としても、こうした挑戦を後押ししたいと感じています。</p>
+        <span class="c-voices-name">大分県職員（担当者）</span>
+      </li>
+    </ul>
+  </div><!-- /.splide__track.c-voices-splide-track -->
+</div><!-- /.splide -->
+
+<script>
+  var splide = new Splide( '#slider1', {
+    perPage: 3,
+    focus: 0,
+    omitEnd: true,
+    gap: '24px',
+    breakpoints: {
+      900: {
+        perPage: 2,
+        gap : '24px',
+      },
+      500: {
+        perPage: 1,
+        gap : '12px',
+      },
+    },
+    classes: {
+      pagination: "splide__pagination c-voces-pagination",
+      page: "splide__pagination__page c-voices-page",
+    },
+    arrows: false,
+  } );
+
+  splide.mount();
+</script>
+
+<style is:global lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .c-voices-splide {
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 18px;
+      background-image: url(../../../public/assets/images/global/icon-voices-quote.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center center;
+      position: absolute;
+      top: -9px;
+      left: 10px;
+      z-index: 100;
+    }
+  }
+
+  .splide__track {
+
+  }
+
+  .c-voices-splide-track {
+
+  }
+
+  .splide__list {
+
+  }
+
+  .c-voices-list {
+
+
+  }
+
+  .splide__slide {
+
+  }
+
+  .c-voices-item {
+    display: grid;
+    gap: 20px;
+    padding-block: 30px 20px;
+    padding-inline: 20px;
+    background-color: var(--color-white);
+    position: relative;
+    box-shadow: 0 5px 5px 0 rgb(205 216 205 / .4);
+  }
+
+  .c-voices-category {
+    width: fit-content;
+    padding-block: 5px;
+    padding-inline: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: var(--color-sub-green1);
+    line-height: 1;
+  }
+
+  .c-voices-text {
+    text-align: justify;
+  }
+
+  .c-voices-name {
+    text-align: right;
+  }
+
+  // pagination
+  .c-voces-pagination {
+    bottom: calc(-16px + -32px);
+  }
+
+  .c-voices-page {
+    width: 16px;
+    height: 16px;
+    margin-block: 0;
+    margin-inline: 8px;
+    background-color: var(--color-white);
+    opacity: 1;
+
+    &.is-active {
+      background-color: var(--color-green);
+      transform: none;
+    }
+  }
+
+</style>

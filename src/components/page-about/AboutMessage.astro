@@ -1,0 +1,128 @@
+---
+
+---
+
+<section class="about-message">
+  <div class="l-container-s">
+    <div class="l-section">
+      <div class="about-message-title">
+        <div class="c-title">
+          <h2 class="c-title-ja">代表挨拶</h2>
+          <span class="c-title-en" aria-hidden="true">Message</span>
+        </div><!-- /.c-title -->
+      </div><!-- /.about-message-title -->
+
+      <div class="l-section-body">
+        <div class="about-message-image">
+          <img src="../../../public/assets/images/about/pic-about-message@2x.png" alt="Oita Campus Link代表 田北ややこ" loading="lazy" decoding="async" width="350" height="230">
+        </div><!-- /.about-message-image -->
+
+        <div class="about-message-description">
+          <div class="about-message-description-title">
+            <h3 class="c-heading-md c-heading-md--green">道標となる存在でありたい</h3>
+          </div><!-- /.about-message-description-title -->
+          <p class="about-message-description-text">Oita Campus Linkの代表の田北ややこです。</p>
+          <p class="about-message-description-text">私が3年前に初めて上京して感じたのは、不安と寂しさでした。今まで友達や親と歩んできた道には、何かしらの生きる上での選択肢が必ずありました。しかし1人で来たこの場所には、道標になるようなものもなく、あるのは日々の小さな不安だけでした。</p>
+          <p class="about-message-description-text">そんな時に自分を助けてくれたのは、自分と同じ出身の先輩たちでした。先輩たちは、私にとって新しい場所や新しい人たち、新しい経験を与えてくれました。そしてそれは、気付けば自分の生きたい生き方を考える道標になっていました。</p>
+          <p class="about-message-description-text">もちろん、何かを与えられたからといって、すぐに歩き出せるわけではありません。自分の足で歩いていく中で、道に迷ったり、立ち止まってしまうこともあります。</p>
+          <p class="about-message-description-text">そんな時に、私たちが皆さんの道標のような存在になれたらと思っています。</p>
+          <p class="about-message-description-text">私がたくさんの先輩方から教えてもらったように、<br class="u-no-sp">人に優しさと尊敬を持つ大切さ、<br class="u-no-sp">勇気を持つ大切さ、<br class="u-no-sp">そして自分が知らない道を冒険する楽しさを、<br class="u-no-sp">次の世代へ伝えていきたいと考えています。</p>
+        </div><!-- /.about-message-description -->
+
+        <div class="about-message-profile">
+          <h3 class="about-message-profile-title c-heading-sm c-heading-sm--green">代表プロフィール</h3>
+          <dl class="c-about-list">
+            <div class="c-about-list-item">
+              <dt class="c-about-list-term">氏名</dt>
+              <dd class="c-about-list-description">田北&emsp;ややこ</dd>
+            </div><!-- /.c-about-list-item -->
+            <div class="c-about-list-item">
+              <dt class="c-about-list-term">役職</dt>
+              <dd class="c-about-list-description">代表</dd>
+            </div><!-- /.c-about-list-item -->
+            <div class="c-about-list-item">
+              <dt class="c-about-list-term">所属大学</dt>
+              <dd class="c-about-list-description">早稲田大学人間科学部人間情報科学科</dd>
+            </div><!-- /.c-about-list-item -->
+            <div class="c-about-list-item">
+              <dt class="c-about-list-term">出身地</dt>
+              <dd class="c-about-list-description">大分県大分市</dd>
+            </div><!-- /.c-about-list-item -->
+          </dl>
+        </div><!-- /.about-message-profile -->
+      </div><!-- /.l-section-body -->
+    </div><!-- /.l-section -->
+  </div><!-- /.l-container-s -->
+</section>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .about-message {
+
+  }
+
+  .about-message-title {
+    text-align: center;
+  }
+
+  .about-message-image {
+
+  }
+
+  .about-message-description {
+    margin-block-start: 32px;
+  }
+
+  .about-message-description-text {
+    margin-block-start: 32px;
+    text-align: justify;
+
+    & + & {
+      margin-block-start: 16px;
+    }
+  }
+
+  .about-message-profile {
+    padding-block: 40px;
+    padding-inline: calc(20px / var(--width-sp) * 100vw);
+    margin-block-start: 32px;
+    background-color: var(--color-white);
+  }
+
+  .about-message-profile-title {
+
+  }
+
+  @include mq() {
+    .about-message {
+
+    }
+
+    .about-message-image {
+      text-align: center;
+
+      img {
+        max-width: 480px;
+      }
+    }
+
+    .about-message-description {
+      margin-block-start: 64px;
+    }
+
+    .about-message-description-text {
+      margin-block-start: 40px;
+    }
+
+    .about-message-profile {
+      padding-block: 40px;
+      padding-inline: 40px;
+      margin-block-start: 64px;
+    }
+
+    .about-message-profile-title {
+
+    }
+  }
+</style>
