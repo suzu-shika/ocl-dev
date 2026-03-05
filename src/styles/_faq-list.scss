@@ -2,11 +2,11 @@
 
 .c-faq-list {
   display: grid;
-  gap: 32px;
+  gap: 40px;
   text-align: justify;
 
   @include mq() {
-    gap: 40px;
+    gap: 56px;
   }
 }
 
@@ -17,34 +17,36 @@
 
 .c-faq-q,
 .c-faq-a {
-  padding-inline: 40px 10px;
+  padding-inline: 46px 16px;
   position: relative;
-}
 
-.c-faq-q::before,
-.c-faq-a::before {
-  color: var(--color-green);
-  font-family: var(--font-family-en);
-  font-size: 18px;
-  position: absolute;
-  left: 10px;
+  &::before {
+    font-family: var(--font-family-serif);
+    font-size: 18px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+  }
 }
 
 .c-faq-q {
-  padding-block: 8px;
-  background-color: var(--color-sub-green1);
+  padding-block: 12px;
+  background-color: var(--color-sub-green2);
+  color: var(--color-white);
   font-family: var(--font-family-serif);
   font-weight: 700;
 
   &::before {
     content: "Q.";
-    top: .345em;
+    color: var(--color-white);
+    top: .45em;
   }
 }
 
 .c-faq-a {
   &::before {
     content: "A.";
-    top: -.05em;
+    color: var(--color-sub-green2);
+    top: -.175em;
   }
 }

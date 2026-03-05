@@ -15,12 +15,13 @@ import CtaArea from "../components/common/CtaArea.astro";
       <HeadingLv1
         headingTitle="よくあるご質問"
         headingTitleEn="FAQ"
+        headingClass="l-container-s"
       />
     </div><!-- /.faq-heading-lv1 -->
 
     <main class="faq-main">
       <div class="faq-content">
-        <div class="l-container">
+        <div class="l-container-s">
           <dl class="c-faq-list">
             <div class="c-faq-item">
               <dt class="c-faq-q">Oita Campus Linkはどのような法人ですか？</dt>
@@ -51,7 +52,7 @@ import CtaArea from "../components/common/CtaArea.astro";
               <dd class="c-faq-a">もちろんです。<br>具体的な検討段階でなくても問題ありません。活動内容やこれまでの取り組みについて、ご説明させていただきますので、お気軽にお問い合わせください。</dd>
             </div><!-- /.c-faq-item -->
           </dl>
-        </div><!-- /.l-container -->
+        </div><!-- /.l-container-s -->
       </div><!-- /.faq-content -->
 
       <!-- breadcrumb -->
@@ -79,7 +80,11 @@ import CtaArea from "../components/common/CtaArea.astro";
   }
 
   .faq-content {
-    margin-block-start: 40px;
+    margin-block-start: 56px;
+
+    @include mq() {
+      margin-block-start: 100px;
+    }
   }
 
 </style>

@@ -1,0 +1,139 @@
+---
+const { currentPage, lastPage, category } = Astro.props;
+const baseUrl = category ? `/news/category/${category}` : `/news`;
+
+// 1ページ目は /news（/news/1 を作らない）
+const pageHref = (p) => (p === 1 ? `${baseUrl}` : `${baseUrl}/${p}`);
+
+function getPageNumbers(currentPage, lastPage) {
+  const pages = [];
+
+  if (lastPage <= 5) {
+    for (let i = 1; i <= lastPage; i++) pages.push(i);
+  } else {
+    if (currentPage <= 3) {
+      pages.push(1, 2, 3, "...", lastPage);
+    } else if (currentPage >= lastPage - 1) {
+      pages.push(1, "...", lastPage - 1, lastPage);
+    } else {
+      pages.push(1, "...", currentPage, "...", lastPage);
+    }
+  }
+
+  return pages;
+}
+
+const pagesToShow = getPageNumbers(currentPage, lastPage);
+---
+
+<nav class="c-pagination" aria-label="ページネーション">
+  {currentPage > 1 && (
+    <a
+      href={pageHref(currentPage - 1)}
+      class="c-pagination-link c-pagination-link--prev"
+      aria-label="前のページへ"
+    ></a>
+  )}
+
+  {pagesToShow.map((p, i) =>
+    typeof p === "number" ? (
+      <a
+        href={pageHref(p)}
+        class={`c-pagination-link ${currentPage === p ? "active" : ""}`}
+        aria-current={currentPage === p ? "page" : undefined}
+      >
+        {p}
+      </a>
+    ) : (
+      <span class="c-pagination-ellipsis" key={`ellipsis-${i}`}>…</span>
+    )
+  )}
+
+  {currentPage < lastPage && (
+    <a
+      href={pageHref(currentPage + 1)}
+      class="c-pagination-link c-pagination-link--next"
+      aria-label="次のページへ"
+    ></a>
+  )}
+</nav>
+
+<style lang="scss">
+  @use "../../styles/breakpoints" as *;
+
+  .c-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .c-pagination-link {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-sub-green2);
+    background-color: var(--color-white);
+    color: var(--color-sub-green2);
+    font-family: var(--font-family-serif);
+    font-size: 16px;
+    font-weight: 700;
+
+    &--prev,
+    &--next {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--prev::before,
+    &--next::before {
+      content: "";
+      width: 11px;
+      height: 11px;
+      border-top: 2px solid var(--color-sub-green2);
+      margin-inline-start: 3px;
+      border-right: 2px solid var(--color-sub-green2);
+      transform: rotate(225deg);
+      transition: border-color .3s ease;
+    }
+
+    &--next::before {
+      margin-inline: 0 3px;
+      transform: rotate(45deg);
+    }
+
+    &.active {
+      background-color: var(--color-sub-green2);
+      color: var(--color-white);
+    }
+  }
+
+  .c-pagination-ellipsis {
+    display: grid;
+    place-items: center;
+  }
+
+  @include mq() {
+    .c-pagination {
+      gap: 20px;
+    }
+  }
+
+  @media (any-hover: hover) {
+    .c-pagination-link {
+      transition: background-color .3s ease, color .3s ease;
+
+      &:hover {
+        background-color: var(--color-sub-green2);
+        color: var(--color-white);
+      }
+
+      &--prev:hover::before,
+      &--next:hover::before {
+        border-color: var(--color-white);
+      }
+    }
+  }
+</style>

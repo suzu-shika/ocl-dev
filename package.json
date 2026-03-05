@@ -9,7 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "microcms-js-sdk": "^3.3.0"
   },
   "devDependencies": {
     "sass-embedded": "^1.97.3"

@@ -1,0 +1,165 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeadingLv1 from "../common/HeadingLv1.astro";
+import NewsPagination from "./NewsPagination.astro";
+import BreadCrumb from "../common/Breadcrumb.astro";
+import CtaArea from "../common/CtaArea.astro";
+import { formatYmd } from "../../utils/date";
+
+type Props = {
+  posts: any[];
+  currentPage: number;
+  lastPage: number;
+  headingTitle?: string;
+  headingTitleEn?: string;
+  baseNoImageSrc?: string;
+};
+
+const {
+  posts = [],
+  currentPage,
+  lastPage,
+  headingTitle = "お知らせ",
+  headingTitleEn = "News",
+  baseNoImageSrc = "/assets/images/global/pic-news-noimage@2x.webp",
+} = Astro.props;
+---
+
+<Layout title="" ogType="website" description="">
+  <div class="archive">
+    <div class="archive-heading-lv1">
+      <HeadingLv1
+        headingTitle={headingTitle}
+        headingTitleEn={headingTitleEn}
+        headingClass="l-container"
+      />
+    </div>
+
+    <main class="archive-main">
+      <div class="archive-content">
+        <div class="l-container">
+          <div class="archive-news-list">
+            {posts.length > 0 ? (
+              posts.map((item) => {
+                const thumbSrc = item.thumbnail?.url
+                  ? `${item.thumbnail.url}${item.thumbnail.url.includes("?") ? "&" : "?"}fm=webp`
+                  : baseNoImageSrc;
+
+                const altText =
+                  (item.thumbnailAlt && item.thumbnailAlt.trim()) ||
+                  "お知らせのサムネイル画像";
+
+                const displayDate = formatYmd(item.publishedAt);
+
+                return (
+                  <a
+                    href={`/news/${item.id}`}
+                    class="c-news-card"
+                    aria-label={`お知らせ: ${item.title}`}
+                  >
+                    <div class="c-news-card-thumbnail">
+                      <img
+                        src={thumbSrc}
+                        alt={altText}
+                        loading="lazy"
+                        decoding="async"
+                        width="318"
+                        height="208"
+                      />
+                    </div>
+
+                    <div class="c-news-card-meta">
+                      <span class="c-news-card-category">{item.category}</span>
+                      <time datetime={item.publishedAt} class="c-news-card-date">
+                        {displayDate}
+                      </time>
+                    </div>
+
+                    <h3 class="c-news-card-title c-heading-sm">{item.title}</h3>
+                  </a>
+                );
+              })
+            ) : (
+              <p class="archive-news-empty">現在、表示できる記事がありません。</p>
+            )}
+          </div>
+
+          <div class="archive-news-pagination">
+            <NewsPagination
+              currentPage={currentPage}
+              lastPage={lastPage}
+            />
+          </div>
+        </div>
+      </div>
+
+      <BreadCrumb />
+    </main>
+
+    <CtaArea />
+  </div>
+</Layout>
+
+<style lang="scss">
+  @use '../../styles/breakpoints' as *;
+
+  .archive {
+
+  }
+
+  .archive-heading-lv1 {
+
+  }
+
+  .archive-main {
+
+  }
+
+  .archive-content {
+    margin-block-start: 56px;
+  }
+
+  .archive-news-list {
+    display: grid;
+    gap: 36px;
+  }
+
+  .archive-news-item {
+
+  }
+
+  .archive-news-pagination {
+    margin-block-start: 64px;
+  }
+
+  @include mq() {
+    .archive {
+
+    }
+
+    .archive-heading-lv1 {
+
+    }
+
+    .archive-main {
+
+    }
+
+    .archive-content {
+      margin-block-start: 100px;
+    }
+
+    .archive-news-list {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 24px;
+    }
+
+    .archive-news-item {
+
+    }
+
+    .archive-news-pagination {
+      margin-block-start: 80px;
+    }
+  }
+</style>
