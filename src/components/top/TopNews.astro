@@ -100,21 +100,9 @@ const posts = response.contents;
 <style lang="scss">
   @use '../../styles/breakpoints' as *;
 
-  .top-news {
-
-  }
-
-  .top-news-title {
-
-  }
-
   .top-news-list {
     display: grid;
     gap: 36px;
-  }
-
-  .top-news-item {
-
   }
 
   .top-news-btn {
@@ -123,29 +111,13 @@ const posts = response.contents;
   }
 
   @include mq() {
-    .top-news {
-
-    }
-
-    .top-news-title {
-
-    }
-
     .top-news-list {
-      // display: grid;
       grid-template-columns: repeat(3, 1fr);
-      // gap: calc(40px / var(--width-pc) * 100vw);
       gap: 24px;
-    }
-
-    .top-news-item {
-      // display: flex;
-      // flex-direction: column;
     }
 
     .top-news-btn {
       margin-block-start: 80px;
-      // text-align: center;
     }
   }
 </style>

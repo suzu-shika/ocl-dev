@@ -9,7 +9,6 @@ const response = await getMembers({
   fields: [
     "id",
     "photo",
-    // "photoAlt",
     "name",
     "position",
     "affiliation",
@@ -132,10 +131,6 @@ const members = response.contents;
     text-align: center;
   }
 
-  .about-members-lead {
-
-  }
-
   .about-members-lead-text {
     text-align: justify;
 
@@ -199,22 +194,11 @@ const members = response.contents;
     }
   }
 
-  .about-members-description {
-
-  }
-
   .about-members-message {
     margin-block-start: 24px;
   }
 
   @include mq() {
-    .about-members {
-    }
-
-    .about-members-title-lv3 {
-      // margin-block-start: 80px;
-    }
-
     .about-members-text {
       margin-block-start: 40px;
     }
@@ -228,9 +212,5 @@ const members = response.contents;
     .about-members-item {
       padding-inline: 24px;
     }
-
-    .about-members-head {
-    }
   }
-
 </style>

@@ -26,7 +26,11 @@ const {
 } = Astro.props;
 ---
 
-<Layout title="" ogType="website" description="">
+<Layout
+  title="活動報告・イベント情報｜お知らせ｜Oita Campus Link"
+  ogType="website"
+  description="Oita Campus Linkのお知らせ一覧です。活動報告やイベント情報、企業・自治体との共創プロジェクトなど最新情報を掲載しています。"
+>
   <div class="archive">
     <div class="archive-heading-lv1">
       <HeadingLv1
@@ -106,18 +110,6 @@ const {
 <style lang="scss">
   @use '../../styles/breakpoints' as *;
 
-  .archive {
-
-  }
-
-  .archive-heading-lv1 {
-
-  }
-
-  .archive-main {
-
-  }
-
   .archive-content {
     margin-block-start: 56px;
   }
@@ -127,27 +119,11 @@ const {
     gap: 36px;
   }
 
-  .archive-news-item {
-
-  }
-
   .archive-news-pagination {
     margin-block-start: 64px;
   }
 
   @include mq() {
-    .archive {
-
-    }
-
-    .archive-heading-lv1 {
-
-    }
-
-    .archive-main {
-
-    }
-
     .archive-content {
       margin-block-start: 100px;
     }
@@ -155,10 +131,6 @@ const {
     .archive-news-list {
       grid-template-columns: repeat(3, 1fr);
       gap: 40px 24px;
-    }
-
-    .archive-news-item {
-
     }
 
     .archive-news-pagination {

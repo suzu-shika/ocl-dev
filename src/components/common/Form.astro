@@ -198,16 +198,16 @@
         },
       },
     };
-  
+
     const setError = (el, errorEl, msg) => {
       if (errorEl) errorEl.textContent = msg || '';
       if (el) {
         el.setAttribute('aria-invalid', msg ? 'true' : 'false');
       }
     };
-  
+
     const clearError = (el, errorEl) => setError(el, errorEl, '');
-  
+
     const getMessage = (input, messages) => {
       const v = input.validity;
       if (v.valid) return '';
@@ -217,19 +217,19 @@
       if (v.patternMismatch && messages.patternMismatch) return messages.patternMismatch;
       return '入力内容を確認してください。';
     };
-  
+
     const validateTextLike = (key) => {
       const { input, error, messages } = fields[key];
       const msg = getMessage(input, messages);
       setError(input, error, msg);
       return !msg;
     };
-  
+
     const validateCategory = () => {
       const checked = fields.category.input();
       const group = fields.category.group();
       const error = fields.category.error;
-  
+
       // 「required」はラジオに付いていても、独自表示したいので明示的にチェック
       const ok = Boolean(checked);
       if (!ok) {
@@ -241,45 +241,45 @@
       group.forEach((r) => r.setAttribute('aria-invalid', 'false'));
       return true;
     };
-  
+
     const validatePrivacy = () => {
       const { input, error, messages } = fields.privacy;
       const ok = input.checked;
       setError(input, error, ok ? '' : messages.valueMissing);
       return ok;
     };
-  
+
     const validateAll = () => {
       const okHp = !(hp && hp.value && hp.value.trim().length > 0);
       if (!okHp) return false;
-  
+
       const ok1 = validateTextLike('name');
       const ok2 = validateTextLike('email');
       const ok3 = validateCategory();
       const ok4 = validateTextLike('message');
       const ok5 = validatePrivacy();
-  
+
       return ok1 && ok2 && ok3 && ok4 && ok5;
     };
-  
+
     // 入力中にエラーを解消（blur / change / input）
     fields.name.input.addEventListener('blur', () => validateTextLike('name'));
     fields.email.input.addEventListener('blur', () => validateTextLike('email'));
     fields.message.input.addEventListener('blur', () => validateTextLike('message'));
-  
+
     fields.email.input.addEventListener('input', () => {
       // 入力中は軽く（タイプミスマッチが出っぱなしになりすぎるのを防ぐ）
       if (fields.email.input.value.trim() === '') {
         clearError(fields.email.input, fields.email.error);
       }
     });
-  
+
     fields.category.group().forEach((r) =>
       r.addEventListener('change', () => validateCategory())
     );
-  
+
     fields.privacy.input.addEventListener('change', () => validatePrivacy());
-  
+
     // 送信時
     form.addEventListener('submit', (e) => {
       const ok = validateAll();
@@ -295,7 +295,6 @@
       }
     });
   })();
-
 </script>
 
 <style lang="scss">

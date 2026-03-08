@@ -58,14 +58,6 @@ import Button from "../common/Button.astro";
 <style lang="scss">
   @use '../../styles/breakpoints' as *;
 
-  .top-activities {
-
-  }
-
-  .top-activities-title {
-
-  }
-
   .top-activities-list {
     display: grid;
     gap: 40px;
@@ -75,7 +67,6 @@ import Button from "../common/Button.astro";
     padding-block: 40px;
     padding-inline: calc(20px / var(--width-sp) * 100vw);
     background-color: var(--color-white);
-
   }
 
   .top-activities-title-lv3 {
@@ -107,10 +98,6 @@ import Button from "../common/Button.astro";
     margin-block-start: 40px;
   }
 
-  .top-activities-image {
-
-  }
-
   .top-activities-text {
     text-align: justify;
   }
@@ -121,67 +108,17 @@ import Button from "../common/Button.astro";
   }
 
   @include mq() {
-    .top-activities {
-
-    }
-
-    .top-activities-title {
-
-    }
-
     .top-activities-list {
-      // display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: calc(40px / var(--width-pc) * 100vw);
     }
 
     .top-activities-item {
-      // padding-block: 40px;
       padding-inline: 24px;
-      // background-color: var(--color-white);
-    }
-
-    .top-activities-title-lv3 {
-      // text-align: center;
-    }
-
-    .top-activities-step {
-      // img {
-      //   width: 84px;
-      // }
-
-      // &--02 {
-      //   img {
-      //     width: 85px;
-      //   }
-      // }
-    }
-
-    .top-activities-sub-title {
-      // margin-block-start: 16px;
-    }
-
-    .top-activities-main-title {
-      // margin-block-start: 4px;
-    }
-
-    .top-activities-content {
-      // display: grid;
-      // gap: 32px;
-      // margin-block-start: 40px;
-    }
-
-    .top-activities-image {
-
-    }
-
-    .top-activities-text {
-      // text-align: justify;
     }
 
     .top-activities-btn {
       margin-block-start: 80px;
-      // text-align: center;
     }
   }
 </style>

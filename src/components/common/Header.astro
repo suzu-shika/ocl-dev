@@ -199,9 +199,6 @@ const isTopPage = Astro.url.pathname === "/";
     }
   }
 
-  .header-link {
-  }
-
   .header-nav-list {
     display: flex;
     align-items: center;
@@ -251,61 +248,9 @@ const isTopPage = Astro.url.pathname === "/";
     display: none;
   }
 
-
-  // .header-nav-btn {
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 5px;
-  //   padding-block: 8px;
-
-  //   &::after {
-  //     content: "";
-  //     width: 10px;
-  //     height: 8px;
-  //     background-color: currentColor;
-  //     clip-path: polygon(100% 0, 0 0, 50% 100%);
-  //   }
-
-  //   &.is-open::after {
-  //     rotate: 180deg;
-  //   }
-  // }
-
-  // .header-hidden-list {
-  //   display: none;
-  //   overflow: hidden;
-  //   width: 172px;
-  //   height: 0;
-  //   border-radius: 10px;
-  //   border: 1px solid;
-  //   background-color: #fff;
-  //   position: absolute;
-  //   top: 44px;
-  //   left: 50%;
-  //   translate: -50%;
-  //   transition: height 0.3s ease;
-
-  //   &.is-open {
-  //     display: block;
-  //     height: auto; // ここだけだとダメなのでJSで実際の高さを計算してあげる
-  //   }
-  // }
-
-  // .header-hidden-item {
-  //   a {
-  //     display: grid;
-  //     place-items: center;
-  //   }
-
-  //   &:not(:last-child) {
-  //     border-bottom: 1px solid;
-  //   }
-  // }
-
   @media screen and (max-width: 1023px) {
     .header {
       font-size: 15px;
-      // box-shadow: 0 1px 1px 0 rgb(0 0 0 / 0.2);
     }
 
     .header-container {
@@ -321,8 +266,8 @@ const isTopPage = Astro.url.pathname === "/";
 
     // hamburger icon
     .header-hamburger {
-      width: 23px;
-      height: 48px;
+      width: 30px;
+      height: 60px;
       margin: auto 0;
       position: absolute;
       top: 0;
@@ -333,23 +278,24 @@ const isTopPage = Astro.url.pathname === "/";
 
     .header-hamburger-icon {
       display: inline-block;
-      width: 23px;
-      height: 2px;
+      width: inherit;
+      height: 1px;
       background-color: var(--color-white);
       position: absolute;
       left: 0;
       transition: all 0.3s ease;
 
       &:nth-of-type(1) {
-        top: 16px;
-      }
-
-      &:nth-of-type(2) {
         top: 24px;
       }
 
+      &:nth-of-type(2) {
+        display: none;
+        top: 30px;
+      }
+
       &:nth-of-type(3) {
-        top: 32px;
+        top: 36px;
       }
     }
 
@@ -359,10 +305,10 @@ const isTopPage = Astro.url.pathname === "/";
     }
     @keyframes btn07-bar01 {
       0% {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(6px) rotate(30deg);
       }
       50% {
-        transform: translateY(8px) rotate(0);
+        transform: translateY(6px) rotate(0);
       }
       100% {
         transform: translateY(0) rotate(0);
@@ -377,10 +323,10 @@ const isTopPage = Astro.url.pathname === "/";
     }
     @keyframes btn07-bar03 {
       0% {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-6px) rotate(-30deg);
       }
       50% {
-        transform: translateY(-8px) rotate(0);
+        transform: translateY(-6px) rotate(0);
       }
       100% {
         transform: translateY(0) rotate(0);
@@ -394,10 +340,10 @@ const isTopPage = Astro.url.pathname === "/";
         transform: translateY(0) rotate(0);
       }
       50% {
-        transform: translateY(8px) rotate(0);
+        transform: translateY(6px) rotate(0);
       }
       100% {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(6px) rotate(30deg);
       }
     }
     .header-hamburger.active span:nth-of-type(2) {
@@ -411,19 +357,15 @@ const isTopPage = Astro.url.pathname === "/";
         transform: translateY(0) rotate(0);
       }
       50% {
-        transform: translateY(-8px) rotate(0);
+        transform: translateY(-6px) rotate(0);
       }
       100% {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-6px) rotate(-30deg);
       }
     }
 
     // hamburger menu
     .header-link {
-      // display: flex;
-      // flex-direction: column;
-      // align-items: flex-start;
-      // gap: 0;
       width: 70%;
       height: 100vh;
       padding-block-start: 130px;
@@ -487,44 +429,11 @@ const isTopPage = Astro.url.pathname === "/";
         width: 24px;
       }
     }
-
-
-
-    // .header-nav-btn {
-    //   justify-content: space-between;
-    //   width: 100%;
-    //   padding-block: 10px;
-
-    //   &::after {
-    //     background-color: var(--color-baby-pink);
-    //   }
-    // }
-
-    // .header-hidden-list {
-    //   width: 100%;
-    //   border-radius: 0;
-    //   border: none;
-    //   background-color: transparent;
-    //   position: static;
-    //   translate: 0;
-    // }
-
-    // .header-hidden-item {
-    //   a {
-    //     place-items: start;
-    //     font-weight: 40;
-    //   }
-
-    //   &:not(:last-child) {
-    //     border-bottom: none;
-    //   }
-    // }
   }
 
   @media screen and (max-width: 767px) {
     .header {
       height: 60px;
-      // padding-bottom: 2px;
     }
 
     .header-logo {
@@ -548,58 +457,6 @@ const isTopPage = Astro.url.pathname === "/";
           opacity: .8;
         }
       }
-
     }
-
-    // @keyframes header-button {
-    //   0% {
-    //     background-position: left 19px top 13px;
-    //   }
-    //   60% {
-    //     background-position: left 19px top 7px;
-    //   }
-    //   100% {
-    //     background-position: left 19px top 13px;
-    //   }
-    // }
-
-    // .header-nav-btn {
-    //   transition: color 0.3s ease;
-
-    //   &:hover {
-    //     color: var(--color-baby-pink);
-
-    //     &::after {
-    //       background-color: var(--color-baby-pink);
-    //     }
-    //   }
-
-    //   &::after {
-    //     transition: background-color 0.3s ease;
-    //   }
-    // }
-
-    // .header-cta-button-pc {
-    //   a {
-    //     transition: background-color 0.3s ease;
-
-    //     &:hover {
-    //       background-color: #84b759;
-    //       animation: header-cta-button 0.4s ease-in-out;
-    //     }
-    //   }
-
-    //   @keyframes header-cta-button {
-    //     0% {
-    //       background-position: center top 11px;
-    //     }
-    //     60% {
-    //       background-position: center top 5px;
-    //     }
-    //     100% {
-    //       background-position: center top 11px;
-    //     }
-    //   }
-    // }
   }
 </style>

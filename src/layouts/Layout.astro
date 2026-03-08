@@ -6,12 +6,12 @@ import Footer from "../components/common/Footer.astro";
 const logo = "/assets/images/global/logo.svg";
 const logoAlt = "Oita Campus Link";
 const {
-  title = "自然豊かな環境でのびのびと成長する習志野市の幼稚園｜みもみ幼稚園",
+  title = "産学連携とは違う。学生が社会と共創する機会をつくるNPO｜Oita Campus Link",
   ogType = "website",
   ogTitle = title,
-  description = "京成実籾駅徒歩3分のみもみ幼稚園は、自然に囲まれた広い敷地でのびのび遊び、学べる環境です。自由と自立を育む教育を行っています。習志野市・船橋市・八千代市・千葉市からもアクセス良好です。見学も随時受付中です。",
+  description = "Oita Campus Linkは、学生自身が運営し意思決定するNPO法人です。従来の産学連携とは異なる形で学生と企業・自治体をつなぎ、対等な共創が生まれる機会をつくることを目的としています。",
   ogDescription = description,
-  ogImage = "https://www.mimomi-youchien.com/ogp.webp",
+  ogImage = "https://ocl.or.jp/ogp.webp",
   noIndex = false,
   jsonLd = ""
 } = Astro.props;
@@ -26,6 +26,7 @@ const {
     <meta name="description" content={description}>
 
     { noIndex && <meta name="robots" content="noindex, nofollow" /> }
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- favicon -->
     <link rel="shortcut icon" href="/favicon.ico">
@@ -33,8 +34,8 @@ const {
     <link rel="icon" type="image/png" href="/android-chrome-256x256.png">
 
     <!-- ogp -->
-    <meta property="og:site_name" content="学校法人飯生学園 みもみ幼稚園">
-    <meta property="og:url" content={`https://www.mimomi-youchien.com${Astro.url.pathname}`} />
+    <meta property="og:site_name" content="NPO法人 Oita Campus Link">
+    <meta property="og:url" content={`https://ocl.or.jp${Astro.url.pathname}`} />
     <meta property="og:type" content={ogType}>
     <meta property="og:title" content={ogTitle}>
     <meta property="og:description" content={ogDescription}>
@@ -60,8 +61,6 @@ const {
     <!-- AstroビルドCSSのpreload+onload -->
     <link rel="preload" href="/_astro/index.Y_5S2fcT.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/_astro/index.Y_5S2fcT.css"></noscript>
-
-
 
     <!-- 構造化データ -->
     {jsonLd && (

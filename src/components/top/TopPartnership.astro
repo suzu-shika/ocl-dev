@@ -63,18 +63,10 @@ import Button from "../common/Button.astro";
     margin-block-start: 32px;
   }
 
-  .top-partnership-image {
-
-  }
-
   .top-partnership-description {
     display: grid;
     gap: 16px;
     margin-block-start: 32px;
-  }
-
-  .top-partnership-text {
-
   }
 
   .top-partnership-list {
@@ -105,63 +97,19 @@ import Button from "../common/Button.astro";
   }
 
   @include mq() {
-    .top-partnership {
-      // background-image: linear-gradient(0deg, rgba(255, 255, 255, 1) 21%, rgba(0, 51, 0, 1) 86%);
-    }
-
-    .top-partnership-lead {
-    }
-
     .top-partnership-gallery {
-      // display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       gap: calc(20px / var(--width-pc) * 100vw);
       margin-block-start: 40px;
     }
 
-    .top-partnership-image {
-
-    }
-
     .top-partnership-description {
-      // display: grid;
-      // gap: 8px;
       margin-block-start: 40px;
-    }
-
-    .top-partnership-text {
-
-    }
-
-    .top-partnership-list {
-      // display: grid;
-      // gap: 8px;
-    }
-
-    .top-partnership-item {
-      // display: flex;
-      // gap: 8px;
-
-      &::before {
-        // content: "";
-        // width: 20px;
-        // height: 19px;
-        // margin-block-start: .2em;
-        // background-image: url(../../../public/assets/images/global/icon-check.svg);
-        // background-repeat: no-repeat;
-        // background-size: contain;
-        // background-position: center center;
-        // position: absolute;
-        // top: 0;
-        // left: 0;
-      }
     }
 
     .top-partnership-btn {
       margin-block-start: 80px;
-      // text-align: center;
     }
   }
-
 </style>
