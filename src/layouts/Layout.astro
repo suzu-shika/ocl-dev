@@ -3,7 +3,7 @@ import "../styles/style.scss";
 import Header from "../components/common/Header.astro";
 import Footer from "../components/common/Footer.astro";
 
-const logo = "/assets/images/global/logo.svg";
+const logo = "/assets/images/global/logo.png";
 const logoAlt = "Oita Campus Link";
 const {
   title = "産学連携とは違う。学生が社会と共創する機会をつくるNPO｜Oita Campus Link",
@@ -11,7 +11,7 @@ const {
   ogTitle = title,
   description = "Oita Campus Linkは、学生自身が運営し意思決定するNPO法人です。従来の産学連携とは異なる形で学生と企業・自治体をつなぎ、対等な共創が生まれる機会をつくることを目的としています。",
   ogDescription = description,
-  ogImage = "https://ocl.or.jp/ogp.webp",
+  ogImage = "https://ocl.or.jp/ogp.png",
   noIndex = false,
   jsonLd = ""
 } = Astro.props;
@@ -57,10 +57,6 @@ const {
     <!-- destyle.css（preload+onload） -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.0/destyle.min.css"></noscript>
-
-    <!-- AstroビルドCSSのpreload+onload -->
-    <link rel="preload" href="/_astro/index.Y_5S2fcT.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/_astro/index.Y_5S2fcT.css"></noscript>
 
     <!-- ヒーロー画像のpreload -->
     <!-- <link rel="preload" as="image" href="/assets/images/top/bg-kv-sp@2x.webp" fetchpriority="high"> -->

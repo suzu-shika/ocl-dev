@@ -96,7 +96,11 @@ import CtaArea from "../components/common/CtaArea.astro";
       </div><!-- /.privacy-content -->
 
       <!-- breadcrumb -->
-      <BreadCrumb />
+      <BreadCrumb
+        breadcrumbClass="l-container-s"
+        breadcrumbLists={[{ name: "プライバシーポリシー", path: "/privacy-policy", schemaName: "プライバシーポリシー" }]}
+        siteUrl="https://ocl.or.jp"
+      />
     </main>
 
     <!-- cta-area -->

@@ -17,7 +17,7 @@ const isTopPage = Astro.url.pathname === "/";
           decoding="async"
           width="200"
           height="41"
-          fetchpriority="low"
+          fetchpriority="high"
         />
       </a>
     </p>
@@ -202,7 +202,11 @@ const isTopPage = Astro.url.pathname === "/";
   .header-nav-list {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 40px;
+
+    @media screen and (max-width: 1099px) {
+      gap: 32px;
+    }
   }
 
   .header-nav-item {

@@ -8,14 +8,28 @@ import TopNews from "../components/top/TopNews.astro";
 import TopVoices from "../components/top/TopVoices.astro";
 import TopFaq from "../components/top/TopFaq.astro";
 import TopCorporatePartners from "../components/top/TopCorporatePartners.astro";
-
 import CtaArea from "../components/common/CtaArea.astro";
+
+// 構造化データ生成関数
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://ocl.or.jp/#organization",
+  name: "NPO法人 Oita Campus Link",
+  alternateName: "Oita Campus Link",
+  url: "https://ocl.or.jp/",
+  logo: "https://ocl.or.jp/assets/images/global/logo.png",
+  image: "https://ocl.or.jp/ogp.png",
+  description:
+    "Oita Campus Linkは、学生自身が運営し意思決定するNPO法人です。従来の産学連携とは異なる形で学生と企業・自治体をつなぎ、対等な共創が生まれる機会をつくることを目的としています。",
+});
 ---
 
 <Layout
   title="産学連携とは違う。学生が社会と共創する機会をつくるNPO｜Oita Campus Link"
   ogType="website"
   description="Oita Campus Linkは、学生自身が運営し意思決定するNPO法人です。従来の産学連携とは異なる形で学生と企業・自治体をつなぎ、対等な共創が生まれる機会をつくることを目的としています。"
+  jsonLd={jsonLd}
 >
   <!-- top-kv -->
   <TopKv />

@@ -1,41 +1,13 @@
 ---
-type Crumb = {
-  name: string; // 表示用
-  path?: string;
-  schemaName?: string; // JSON-LD用
-};
+type Crumb = { name: string; path?: string };
 
 const {
   breadcrumbLists = [],
   breadcrumbClass = "",
-  siteUrl = "",
 } = Astro.props as {
   breadcrumbLists?: Crumb[];
   breadcrumbClass?: string;
-  siteUrl?: string;
 };
-
-const items: Crumb[] = [{ name: "ホーム", path: "/", schemaName: "ホーム" }, ...breadcrumbLists];
-
-const breadcrumbJsonLd =
-  siteUrl
-    ? JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: items.map((item, index) => {
-          const itemPath =
-            item.path ??
-            (index === items.length - 1 ? Astro.url.pathname : "");
-
-          return {
-            "@type": "ListItem",
-            position: index + 1,
-            name: item.schemaName ?? item.name,
-            item: `${siteUrl}${itemPath}`,
-          };
-        }),
-      })
-    : "";
 ---
 
 <div class={breadcrumbClass}>
@@ -57,10 +29,6 @@ const breadcrumbJsonLd =
       })}
     </ol>
   </nav>
-
-  {breadcrumbJsonLd && (
-    <script type="application/ld+json" set:html={breadcrumbJsonLd}></script>
-  )}
 </div>
 
 <style is:global lang="scss">

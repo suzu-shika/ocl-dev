@@ -32,25 +32,17 @@ import BreadCrumb from "../components/common/Breadcrumb.astro";
       </div><!-- /.contact-content -->
 
       <!-- breadcrumb -->
-      <BreadCrumb />
+      <BreadCrumb
+        breadcrumbClass="l-container"
+        breadcrumbLists={[{ name: "お問い合わせ", path: "/contact", schemaName: "お問い合わせ" }]}
+        siteUrl="https://ocl.or.jp"
+      />
     </main>
   </div><!-- /.contact -->
 </Layout>
 
 <style lang="scss">
   @use '../styles/breakpoints' as *;
-
-  .contact {
-
-  }
-
-  .contact-heading-lv1 {
-
-  }
-
-  .contact-main {
-
-  }
 
   .contact-content {
     margin-block-start: 56px;
@@ -59,5 +51,4 @@ import BreadCrumb from "../components/common/Breadcrumb.astro";
       margin-block-start: 100px;
     }
   }
-
 </style>

@@ -47,7 +47,11 @@ import CtaArea from "../components/common/CtaArea.astro";
       </div><!-- /.about-content -->
 
       <!-- breadcrumb -->
-      <BreadCrumb />
+      <BreadCrumb
+        breadcrumbClass="l-container-s"
+        breadcrumbLists={[{ name: "Oita Campus Linkについて", path: "/about", schemaName: "Oita Campus Linkについて" }]}
+        siteUrl="https://ocl.or.jp"
+      />
     </main>
 
     <!-- cta-area -->

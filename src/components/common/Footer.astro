@@ -7,20 +7,22 @@ const { logo, logoAlt } = Astro.props;
 <footer class="footer">
   <div class="l-container">
     <div class="footer-logo">
-      <img
-        src={logo}
-        alt={logoAlt}
-        loading="lazy"
-        decoding="async"
-        width="200"
-        height="41"
-      />
+      <a href="/">
+        <img
+          src={logo}
+          alt={logoAlt}
+          loading="lazy"
+          decoding="async"
+          width="200"
+          height="41"
+        />
+      </a>
     </div><!-- /.footer-logo -->
 
     <nav class="footer-nav" aria-label="フッターナビゲーション">
       <ul class="footer-nav-list">
         <li class="footer-nav-item">
-          <a href="/">トップ</a>
+          <a href="/">ホーム</a>
         </li>
         <li class="footer-nav-item">
           <a href="/about">Oita Campus Linkについて</a>
@@ -33,6 +35,9 @@ const { logo, logoAlt } = Astro.props;
         </li>
         <li class="footer-nav-item">
           <a href="/faq">よくあるご質問</a>
+        </li>
+        <li class="footer-nav-item">
+          <a href="/contact">お問い合わせ</a>
         </li>
       </ul>
     </nav>
@@ -72,19 +77,61 @@ const { logo, logoAlt } = Astro.props;
   </div><!-- /.l-container -->
 
   <!-- トップへ戻るボタン -->
-  <!-- <a href="#" class="footer-to-page-top" aria-label="ページトップへ戻る">
+  <a href="#" class="footer-page-top" aria-label="ページトップへ戻る">
     <img
-      src="/assets/images/global/icon-to-page-top.svg"
+      src="/assets/images/global/icon-arrow-up.svg"
       alt=""
       loading="lazy"
       decoding="async"
-      width="22"
-      height="12"
+      width="6"
+      height="16"
     />
-    <span aria-disabled="true">トップ</span> -->
-  </a><!-- /.to-page-top -->
-
+  </a><!-- /.footer-page-top -->
 </footer>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const pageTop = document.querySelector(".footer-page-top");
+    const footer = document.querySelector(".footer");
+
+    if (!pageTop || !footer) return;
+
+    // 初期状態
+    pageTop.style.opacity = "0";
+    pageTop.style.pointerEvents = "none";
+
+    let footerVisible = false;
+
+    // フッター検知
+    const observer = new IntersectionObserver(
+      (entries) => {
+        footerVisible = entries[0].isIntersecting;
+        toggleButton();
+      },
+      {
+        root: null,
+        threshold: 0
+      }
+    );
+
+    observer.observe(footer);
+
+    // スクロール監視
+    window.addEventListener("scroll", toggleButton);
+
+    function toggleButton() {
+      const scrollY = window.scrollY;
+
+      if (scrollY > 200 && !footerVisible) {
+        pageTop.style.opacity = "1";
+        pageTop.style.pointerEvents = "auto";
+      } else {
+        pageTop.style.opacity = "0";
+        pageTop.style.pointerEvents = "none";
+      }
+    }
+  });
+</script>
 
 <style lang="scss">
   @use "../../styles/breakpoints" as *;
@@ -162,14 +209,31 @@ const { logo, logoAlt } = Astro.props;
     }
   }
 
-  .footer-to-page-top {
+  .footer-page-top {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--color-green);
+    background-color: var(--color-green);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
 
+    img {
+      width: 6px;
+      filter: invert(100%) sepia(71%) saturate(2%) hue-rotate(326deg) brightness(113%) contrast(101%);
+    }
   }
 
   @include mq() {
     .footer {
       .l-container {
-        width: fit-content;
+        // width: fit-content;
       }
     }
 
@@ -185,13 +249,15 @@ const { logo, logoAlt } = Astro.props;
 
     .footer-nav-list {
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 49px;
-      gap: min(49px, calc(49 / 850 * 100vw));
+      gap: 20px 49px;
+      // gap: min(49px, calc(49 / 850 * 100vw));
     }
 
     .footer-nav-item {
       font-size: min(16px, calc(16 / 850 * 100vw));
+      font-size: 16px;
 
       a {
         padding-block: 8px;
@@ -245,8 +311,15 @@ const { logo, logoAlt } = Astro.props;
       }
     }
 
-    .footer-to-page-top {
+    .footer-page-top {
+      width: 48px;
+      height: 48px;
+      right: 24px;
+      bottom: 24px;
 
+      img {
+        width: 8px;
+      }
     }
   }
 
@@ -255,6 +328,21 @@ const { logo, logoAlt } = Astro.props;
       transition: opacity .3s ease;
       &:hover  {
         opacity: .75;
+      }
+    }
+
+    .footer-page-top {
+      transition: background-color .3s;
+
+      img {
+        transition: filter .3s;
+      }
+      &:hover {
+        background-color: var(--color-white);
+
+        img {
+          filter: invert(16%) sepia(32%) saturate(2179%) hue-rotate(82deg) brightness(90%) contrast(108%);
+        }
       }
     }
   }

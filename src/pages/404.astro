@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/common/Button.astro";
-import BreadCrumb from "../components/common/Breadcrumb.astro";
 ---
 
 <Layout
@@ -39,8 +38,6 @@ import BreadCrumb from "../components/common/Breadcrumb.astro";
         </div><!-- /.not-found-content -->
       </div><!-- /.l-container-s -->
 
-      <!-- breadcrumb -->
-      <BreadCrumb />
     </main>
   </div><!-- /.not-found -->
 </Layout>
@@ -49,7 +46,7 @@ import BreadCrumb from "../components/common/Breadcrumb.astro";
   @use '../styles/breakpoints' as *;
 
   .not-found {
-    padding-block-start: 80px;
+    padding-block: 80px 160PX;
     margin-block-start: 60px;
   }
 

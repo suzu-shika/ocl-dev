@@ -101,12 +101,45 @@ const thumbnailSrc = news.thumbnail?.url
 const thumbnailAlt =
   (news.thumbnailAlt && news.thumbnailAlt.trim()) ||
   "お知らせのサムネイル画像";
+
+  // 構造化データ生成関数
+  const newsJsonLd = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `https://ocl.or.jp/news/${news.id}#article`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://ocl.or.jp/news/${news.id}`,
+    },
+    headline: news.title,
+    description: metaDescription,
+    image: [thumbnailSrc],
+    datePublished: news.publishedAt,
+    dateModified: news.updatedAt || news.publishedAt,
+    author: {
+      "@type": "Organization",
+      name: "NPO法人 Oita Campus Link",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "NPO法人 Oita Campus Link",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://ocl.or.jp/assets/images/global/logo.png",
+      },
+    },
+    "isPartOf":{
+      "@type":"WebSite",
+      "@id":"https://ocl.or.jp/#website"
+    },
+  });
 ---
 
 <Layout
   title={`お知らせ - ${news.title}｜Oita Campus Link`}
   ogType="article"
   description={metaDescription}
+  jsonLd={newsJsonLd}
 >
   <div class="single">
     <main class="single-main">
@@ -127,10 +160,11 @@ const thumbnailAlt =
             <img
               src={thumbnailSrc}
               alt={thumbnailAlt}
-              loading="lazy"
+              loading="eager"
               decoding="async"
               width="800"
               height="526"
+              fetchpriority="high"
             />
           </div>
 
@@ -147,7 +181,17 @@ const thumbnailAlt =
         />
       </div>
 
-      <BreadCrumb />
+      <BreadCrumb
+        breadcrumbClass="l-container-s"
+        siteUrl="https://ocl.or.jp"
+        breadcrumbLists={[
+          { name: "お知らせ", path: "/news", schemaName: "お知らせ" },
+          {
+            name: truncateText(news.title, 40),
+            schemaName: news.title
+          }
+        ]}
+      />
     </main>
 
     <CtaArea />

@@ -100,7 +100,11 @@ const {
         </div>
       </div>
 
-      <BreadCrumb />
+      <BreadCrumb
+        breadcrumbClass="l-container"
+        breadcrumbLists={[{ name: "お知らせ", path: "/news", schemaName: "お知らせ" }]}
+        siteUrl="https://ocl.or.jp"
+      />
     </main>
 
     <CtaArea />
