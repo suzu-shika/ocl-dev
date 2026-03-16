@@ -5,14 +5,17 @@ import Button from "../common/Button.astro";
 <div class="top-kv">
   <div class="top-kv-content">
     <div class="l-container">
-      <div class="top-kv-logo">
-        <!-- <img src="/assets/images/global/icon-logo-mark.svg" alt="" loading="eager" fetchpriority="high" decoding="async" width="380" height="379"> -->
-      </div><!-- /.top-kv-logo -->
-      <h1 class="top-kv-heading">学生と社会を、<br class="u-no-pc">学生がつなぐ。</h1>
-      <p class="top-kv-lead">
-        <span>Oita Campus Linkは、<br>学生と企業・行政をつなぎ、<br>学生が社会と共創する機会をつくる。</span>
-        <span>学生自身が運営し、<br class="u-no-pc">意思決定するNPO法人です。</span>
-      </p>
+      <div class="top-kv-catch">
+        <div class="top-kv-logo">
+          <img src="/assets/images/global/icon-logo-mark.svg" alt="" loading="eager" fetchpriority="high" decoding="async" width="380" height="379">
+        </div><!-- /.top-kv-logo -->
+        <h1 class="top-kv-heading">学生と社会を、<span>学生がつなぐ。</span></h1>
+        <!-- <h1 class="top-kv-heading">学生と社会を、<br class="u-no-pc">学生がつなぐ。</h1> -->
+        <p class="top-kv-lead">
+          <span>Oita Campus Linkは、<br>学生と企業・行政をつなぎ、<br>学生が社会と共創する機会をつくる。</span>
+          <span>学生自身が運営し、<br class="u-no-pc">意思決定するNPO法人です。</span>
+        </p>
+      </div><!-- /.top-kv-catch -->
     </div><!-- /.l-container -->
   </div><!-- /.top-kv-content -->
   <div class="top-kv-cta">
@@ -41,7 +44,13 @@ import Button from "../common/Button.astro";
     color: var(--color-base);
     font-family: var(--font-family-serif);
     font-weight: 700;
+    line-height: 1.8;
+
     position: relative;
+
+    @include mq() {
+      height: 700px;
+    }
   }
 
   .top-kv-content {
@@ -49,7 +58,7 @@ import Button from "../common/Button.astro";
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
 
     .l-container {
       position: relative;
@@ -58,6 +67,10 @@ import Button from "../common/Button.astro";
 
   .top-kv-heading {
     font-size: 40px;
+
+    span {
+      display: inline-block;
+    }
   }
 
   .top-kv-lead {
@@ -68,8 +81,8 @@ import Button from "../common/Button.astro";
   }
 
   .top-kv-logo {
-    width: 150px;
-    margin-block-end: 40px;
+    width: 120px;
+    margin-block-end: 24px;
     margin-inline-start: auto;
     // position: absolute;
     // top: 0;

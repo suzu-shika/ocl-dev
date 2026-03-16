@@ -77,7 +77,7 @@ const { logo, logoAlt } = Astro.props;
   </div><!-- /.l-container -->
 
   <!-- トップへ戻るボタン -->
-  <a href="#" class="footer-page-top" aria-label="ページトップへ戻る">
+  <a href="#body" class="footer-page-top" aria-label="ページトップへ戻る">
     <img
       src="/assets/images/global/icon-arrow-up.svg"
       alt=""
@@ -118,6 +118,15 @@ const { logo, logoAlt } = Astro.props;
 
     // スクロール監視
     window.addEventListener("scroll", toggleButton);
+
+    // ページトップへ戻る
+    pageTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
 
     function toggleButton() {
       const scrollY = window.scrollY;
