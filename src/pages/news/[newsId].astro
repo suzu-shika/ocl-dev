@@ -106,10 +106,10 @@ const thumbnailAlt =
   const newsJsonLd = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "Article",
-    "@id": `https://ocl.or.jp/news/${news.id}#article`,
+    "@id": `https://creative-basbousa-a8451a.netlify.app/news/${news.id}#article`,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://ocl.or.jp/news/${news.id}`,
+      "@id": `https://creative-basbousa-a8451a.netlify.app/news/${news.id}`,
     },
     headline: news.title,
     description: metaDescription,
@@ -125,12 +125,12 @@ const thumbnailAlt =
       name: "NPO法人 Oita Campus Link",
       logo: {
         "@type": "ImageObject",
-        url: "https://ocl.or.jp/assets/images/global/logo.png",
+        url: "https://creative-basbousa-a8451a.netlify.app/assets/images/global/logo.png",
       },
     },
     "isPartOf":{
       "@type":"WebSite",
-      "@id":"https://ocl.or.jp/#website"
+      "@id":"https://creative-basbousa-a8451a.netlify.app/#website"
     },
   });
 ---
@@ -183,7 +183,7 @@ const thumbnailAlt =
 
       <BreadCrumb
         breadcrumbClass="l-container-s"
-        siteUrl="https://ocl.or.jp"
+        siteUrl="https://creative-basbousa-a8451a.netlify.app"
         breadcrumbLists={[
           { name: "お知らせ", path: "/news", schemaName: "お知らせ" },
           {
