@@ -22,15 +22,14 @@ const voices = response.contents;
       {
         voices.length > 0 ? (
           voices.map((item) => {
-            const displayName = item.title?.trim()
-              ? `${item.name} 様（${item.title}）`
-              : `${item.name} 様`;
-
             return (
               <li class="splide__slide c-voices-item">
                 <span class="c-voices-category">{item.category}</span>
-                <div class="c-voices-text" set:html={nl2br(item.text)}></div>
-                <span class="c-voices-name">{displayName}</span>
+                <p class="c-voices-text" set:html={nl2br(item.text)}></p>
+                <div class="c-voices-name">
+                  <span class="c-voices-display-name">{item.name} 様</span>
+                  <span class="c-voices-title">{item.title}</span>
+                </div>
               </li>
             );
           })
@@ -123,6 +122,10 @@ const voices = response.contents;
   .c-voices-name {
     margin-block-start: auto;
     text-align: right;
+  }
+
+  .c-voices-title {
+    display: block;
   }
 
   // pagination

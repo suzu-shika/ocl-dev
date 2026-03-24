@@ -240,12 +240,6 @@ const { logo, logoAlt } = Astro.props;
   }
 
   @include mq() {
-    .footer {
-      .l-container {
-        // width: fit-content;
-      }
-    }
-
     .footer-logo {
       img {
         max-width: 240px;
@@ -261,7 +255,6 @@ const { logo, logoAlt } = Astro.props;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px 49px;
-      // gap: min(49px, calc(49 / 850 * 100vw));
     }
 
     .footer-nav-item {
